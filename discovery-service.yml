@@ -11,6 +11,6 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 
-user.password: toto1234      
+user.password: '{cipher}AQB2Vtix45FDMwcPJHEfjMVenIuN5XC4iGqJ8pgjlW1L3dp1NYRiBBpEdNxQLVUKxV9r1+NaEgnUPH0ACCyVPRX4slRa/rrrGQsVxxOsgnwXpgqbiOnl7FwIB64xivHadQDyNOfrgkW3ddC8NaGdT1BQdXe4pU2mmlWyDXrdMxo9BRoQcBcSmD3bTts35jifR7jWWFmeDPTUCE04auq+yz+KHokqsUarbgDuF3K/D55ZzkiYeW59Kky4PH63+0tjmz1b9M4g4G5YA9eKCrnhk+99dWjteyx/cJyAXssutG5mZvetyFtkldJFXArLBdcueSrY+AebRF6Zh2Smvd7PGwQe7AlYg7vyJy01JM+5p1AUZABX8TK9aMe5svXahIe1SW8='      
 
 
