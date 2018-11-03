@@ -1,0 +1,28 @@
+server:
+  port: 8761
+ 
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: '{cipher}AQAZms+f2Lq4wLcMnZMStTcVqBUCFyDU1GaLdFrOnxx7IkDkxxrxVB5loD6akcAQIy3dbzX0tEUf5kO/mWO66xjH9pWxRtGQdnSfeVVBVaYe5n8r7v6T6Vf5DD2RCtdnY5ROMLenTiwry6t/zylKsYWZs4xADj2yd5RCEpGdVIdS4p070UAuDY8H4om1bH94afsek6TE5e074Ns4mjBxubRSJbRANIbV1APpYOjmMQGylDbZaKm7CHCb3qBuO9JLX7ITht7x+ouIq92nKYsfMHjBH1trgT3k4JtUcxQnmiWvzC+lb89DH3k1mn45Eg11tqx0tWdJMo6pV8JTzF8tRokgdjzfXI0RmEzLDbGoYcC7JtuDUHEDnnwBHwVWFmG2cRE='
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+user.password: '{cipher}AQB2Vtix45FDMwcPJHEfjMVenIuN5XC4iGqJ8pgjlW1L3dp1NYRiBBpEdNxQLVUKxV9r1+NaEgnUPH0ACCyVPRX4slRa/rrrGQsVxxOsgnwXpgqbiOnl7FwIB64xivHadQDyNOfrgkW3ddC8NaGdT1BQdXe4pU2mmlWyDXrdMxo9BRoQcBcSmD3bTts35jifR7jWWFmeDPTUCE04auq+yz+KHokqsUarbgDuF3K/D55ZzkiYeW59Kky4PH63+0tjmz1b9M4g4G5YA9eKCrnhk+99dWjteyx/cJyAXssutG5mZvetyFtkldJFXArLBdcueSrY+AebRF6Zh2Smvd7PGwQe7AlYg7vyJy01JM+5p1AUZABX8TK9aMe5svXahIe1SW8='      
+
+
