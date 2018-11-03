@@ -25,4 +25,4 @@ management:
         include: "*"
 
 test:
-  value: Toto first test
+  value: test webhook stream
