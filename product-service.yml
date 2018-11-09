@@ -22,7 +22,7 @@ spring:
       host: localhost
       port: 27018
       database: products
-      uri: mongodb://localhost/products
+      #uri: mongodb://localhost/products
 
 management:
   endpoints:
