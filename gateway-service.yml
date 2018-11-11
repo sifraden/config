@@ -3,11 +3,12 @@ server:
   
  zuul:
   routes:
+    prefix: /api
     product:
-      path: /api/product/**
+      path: /product/**
       serviceId: product-service
     category:
-      path: /api/category/**
+      path: /category/**
       serviceId: category-service
 
 eureka:
