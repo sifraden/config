@@ -2,8 +2,8 @@ server:
   port: 9090
   
  zuul:
+  prefix: /api
   routes:
-    prefix: /api
     product:
       path: /product/**
       serviceId: product-service
