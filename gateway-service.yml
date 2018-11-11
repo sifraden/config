@@ -2,7 +2,6 @@ server:
   port: 9090
 
 zuul:
-  ignoredServices: "*"
   routes:
     api-product:
       path: /product/**
