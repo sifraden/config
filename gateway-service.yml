@@ -1,7 +1,14 @@
 server:
-  port: 0
-
-
+  port: 9090
+  
+ zuul:
+  routes:
+    product:
+      path: /api/product/**
+      serviceId: product-service
+    category:
+      path: /api/category/**
+      serviceId: category-service
 
 eureka:
   instance:
