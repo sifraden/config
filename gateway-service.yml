@@ -2,12 +2,13 @@ server:
   port: 9090
 
 zuul:
+  ignoredServices: "*"
   prefix: /api
   routes:
-    api-product:
+    product:
       path: /product/**
       serviceId: product-service
-    api-category:
+    category:
       path: /category/**
       serviceId: category-service
 
