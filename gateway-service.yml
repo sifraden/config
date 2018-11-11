@@ -6,7 +6,7 @@ zuul:
   prefix: /api
   routes:
     product:
-      path: /product/**
+      path: /productservice/**
       serviceId: product-service
     category:
       path: /category/**
