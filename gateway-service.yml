@@ -11,6 +11,9 @@ zuul:
     category:
       path: /category/**
       serviceId: category-service
+    user:
+      path: /user/**
+      serviceId: user-service
 
 eureka:
   instance:
