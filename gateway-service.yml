@@ -23,7 +23,7 @@ hystrix:
           enabled: false
       isolation:
         thread:
-          timeoutInMilliseconds: 60000
+          timeoutInMilliseconds: 600000
 
 eureka:
   instance:
