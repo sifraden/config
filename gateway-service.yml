@@ -24,9 +24,12 @@ zuul:
 #      isolation:
 #        thread:
 #          timeoutInMilliseconds: 600000
-ribbon:
-  ConnectTimeout: 6000000
-  ReadTimeout: 6000000
+#ribbon:
+#  ConnectTimeout: 6000000
+#  ReadTimeout: 6000000
+zuul:
+  host:
+    connect-timeout-millis: 6000000
 
 eureka:
   instance:
