@@ -15,15 +15,15 @@ zuul:
       path: /user/**
       serviceId: user-service
 
-hystrix:
-  command:
-    user-service:
-      execution:
-        timeout:
-          enabled: false
-      isolation:
-        thread:
-          timeoutInMilliseconds: 600000
+#hystrix:
+#  command:
+#    user-service:
+#      execution:
+#        timeout:
+#          enabled: false
+#      isolation:
+#        thread:
+#          timeoutInMilliseconds: 600000
 ribbon:
   ConnectTimeout: 6000000
   ReadTimeout: 6000000
