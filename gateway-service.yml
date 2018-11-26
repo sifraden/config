@@ -15,11 +15,13 @@ zuul:
       path: /user/**
       serviceId: user-service
 
-ribbon:
-  ReadTimeout:100
-  ConnectTimeout:500
-  MaxAutoRetries:1
-  MaxAutoRetriesNextServer:1
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
 
 eureka:
   instance:
