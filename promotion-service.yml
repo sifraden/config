@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    lease-renewal-interval-in-seconds:
+    lease-renewal-interval-in-seconds: 30
     metadata-map:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
   client:
