@@ -15,12 +15,30 @@ eureka:
 #    clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
 #  appConfig: SAMPLE-HYSTRIX-AGGREGATE
 
+
 turbine:
-  appConfig: HYSTRIX-TURBINE
-  clusterNameExpression: new String('default')
+  aggregator:
+    cluster-config: default
+  app-config: HYSTRIX-TURBINE
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+  instanceUrlSuffix:
+    default: actuator/hystrix.stream
+
 
 management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+
   endpoints:
+    jmx:
+      exposure:
+        include: "*"
     web:
       exposure:
-        include: hystrix.stream, info, health
+        include: "*"
+      base-path: /actuator
+      cors:
+        allowed-origins: true
