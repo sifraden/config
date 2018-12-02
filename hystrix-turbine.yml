@@ -16,7 +16,7 @@ eureka:
 #  appConfig: SAMPLE-HYSTRIX-AGGREGATE
 
 turbine:
-  appConfig: WRITING,READING
+  appConfig: HYSTRIX-TURBINE
   clusterNameExpression: new String('default')
 
 management:
