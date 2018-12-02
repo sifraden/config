@@ -19,7 +19,7 @@ eureka:
 turbine:
   aggregator:
     cluster-config: default
-  app-config: HYSTRIX-TURBINE
+  app-config: hystrix-turbine
   cluster-name-expression: new String("default")
   combine-host-port: true
   instanceUrlSuffix:
