@@ -15,8 +15,12 @@ eureka:
 #    clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
 #  appConfig: SAMPLE-HYSTRIX-AGGREGATE
 
+turbine:
+  appConfig: WRITING,READING
+  clusterNameExpression: new String('default')
+
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: hystrix.stream, info, health
