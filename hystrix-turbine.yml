@@ -15,7 +15,6 @@ eureka:
 #    clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
 #  appConfig: SAMPLE-HYSTRIX-AGGREGATE
 
-
 turbine:
   aggregator:
     cluster-config: default
@@ -24,6 +23,10 @@ turbine:
   combine-host-port: true
   instanceUrlSuffix:
     default: actuator/hystrix.stream
+  instanceMonitor:
+    eventStream:
+      skipLineLogic:
+        enabled: false
 
 
 management:
