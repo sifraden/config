@@ -12,8 +12,8 @@ eureka:
 
 turbine:
   aggregator:
-    clusterConfig: promotion-service
-  appConfig: promotion-service
+    clusterConfig: default
+  appConfig: default
 
 
 
