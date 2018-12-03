@@ -14,6 +14,7 @@ turbine:
   aggregator:
     clusterConfig: default
   appConfig: default
+  instanceInsertPort: false
 
 
 
