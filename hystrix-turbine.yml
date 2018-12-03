@@ -10,10 +10,10 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 
-#turbine:
-#  aggregator:
-#    clusterConfig: promotion-service
-#  appConfig: promotion-service
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: default
 
 
 
