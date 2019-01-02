@@ -25,6 +25,5 @@ spring:
     sampler:
       percentage: 1.0
   zipkin:
-    baseUrl: http://localhost.100:9411
     sender:
       type: web
