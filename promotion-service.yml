@@ -27,4 +27,4 @@ spring:
   zipkin:
     baseUrl: http://localhost.100:9411/
     sender:
-      type: rabbit
+      type: web
