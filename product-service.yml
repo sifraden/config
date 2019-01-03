@@ -23,10 +23,17 @@ spring:
       port: 27018
       database: products
       #uri: mongodb://localhost/products
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    sender:
+      type: web
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
 
