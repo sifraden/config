@@ -27,6 +27,3 @@ spring:
   zipkin:
     sender:
       type: web
-feign:
-  hystrix:
-    enabled: true
