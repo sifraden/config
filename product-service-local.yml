@@ -24,8 +24,11 @@ spring:
       database: products
       #uri: mongodb://localhost/products
   kafka:
-    bootstrapAddress: localhost:9092
-  topic: products
+    producer:
+      acks: all
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   sleuth:
     sampler:
       percentage: 1
@@ -38,6 +41,10 @@ management:
     web:
       exposure:
         include: "*"
+
+
+kafka:
+  topic: products
 
 
 
