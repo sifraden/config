@@ -23,12 +23,6 @@ spring:
       port: 27018
       database: products
       #uri: mongodb://localhost/products
-  kafka:
-    producer:
-      acks: all
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   sleuth:
     sampler:
       percentage: 1
