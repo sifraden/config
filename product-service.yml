@@ -39,5 +39,5 @@ management:
 
 kafka:
   topic: products
-  bootstrapAddress: localhost:9094
+  bootstrapAddress: localhost:9092
 
