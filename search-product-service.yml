@@ -27,12 +27,7 @@ spring:
   zipkin:
     sender:
       type: web
-  data:
-    elasticsearch:
-      cluster-name: elasticsearch-cluster
-      cluster-nodes: localhost:9200
-      repositories:
-        enabled: true
+
 
 kafka:
   bootstrapAddress: localhost:9092
