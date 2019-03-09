@@ -17,6 +17,9 @@ zuul:
     promotion:
       path: /promotion/**
       serviceId: promotion-service
+    elastic:
+      path: /elastic/**
+      serviceId: search-service
 
 #hystrix:
 #  command:
