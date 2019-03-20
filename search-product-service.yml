@@ -33,3 +33,8 @@ kafka:
   bootstrapAddress: localhost:9092
   groupId: products
   topic: products
+
+elasticsearch:
+  name: elasticsearch
+  server: localhost
+  port: 9300
