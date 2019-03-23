@@ -28,6 +28,10 @@ spring:
     sender:
       type: web
 
+logging:
+  level:
+    root: debug
+
 
 kafka:
   bootstrapAddress: localhost:9092
