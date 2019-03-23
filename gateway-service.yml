@@ -20,6 +20,9 @@ zuul:
     elastic:
       path: /elastic/**
       serviceId: search-product-service
+    mail:
+      path: /mail/**
+      serviceId: email-service
 
 #hystrix:
 #  command:
