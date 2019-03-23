@@ -16,7 +16,7 @@ management:
       exposure:
         include: "*"
 spring:
-  sendGrid: 
+  sendgrid: 
     api-key: '{cipher}AQBdiXumdv4dl1+JczDxrPjyOuc6sUHiXy/dOVtcwdKww9D8gqzxkKowh9eS6RYvpUYgKT14NOt1ZLATkcKb6KrhshqhBFINcyEyiafg7k6Dm1coprJSyz3MwP6D5VxTyGXTPVGYK+57jYw7SENbHGD5y/1Uxl1MpNqEgCatj2wsCoGQ0/AqbhEgGLonYKMwUctYymzhNMBkse2UQvcUQsG8lwxsXRWh41VyQSw915zXqRlk1gHsq3VjelR96GkhFitbMfWLUcFeN/YHiNV+WYv2cJrhIlQUrjRMQwB75NpYca+5RXuD21PZ4rdtnItwYtLyQC7/URn3osTvK3J5gzyKcxAB2Oc+D9hqE1fD91kiVlbhcgqHFcHyK1zn5rv/W8HMaLZ2uweJ1IND+X6CeZ6yPLK+AWkSLXGkPSJy13f8X27TyZdutkLvSIW9Pe4/rUq/SbMhseXk3rtCgxPfvBum'
   rabbitmq:
     host: localhost
