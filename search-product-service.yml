@@ -28,10 +28,6 @@ spring:
     sender:
       type: web
 
-logging:
-  level:
-    root: debug
-
 
 kafka:
   bootstrapAddress: 172.20.0.3:9092
