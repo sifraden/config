@@ -34,7 +34,7 @@ logging:
 
 
 kafka:
-  bootstrapAddress: localhost:9092
+  bootstrapAddress: 172.20.0.3:9092
   groupId: products
   topic: products
 
