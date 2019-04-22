@@ -23,6 +23,9 @@ zuul:
     mail:
       path: /mail/**
       serviceId: email-service
+    order:
+      path: /order/**
+      serviceId: order-service
 
 #hystrix:
 #  command:
