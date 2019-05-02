@@ -34,3 +34,8 @@ sendGrid:
   mail:
     from: '{cipher}AQCF9/SQ5W2sQY6Cs1t45zWoDEp8STPa42t/JAmIGTNjr1DfGha1IYMgK6D9biVDOaAUOIVufei5sut5t/dpsMTJOpu86E/rqkvP6oYLx13vA+8awI15GcesH1TEGZyAXO1GV644VZw2Pc8OMG/CjMsQ6CVDhL/rJPbPEWHuRc8bM9P9qO2lXuEjwXwxsZItSHgdDAebwWmzKTY563aySc/eI2H/Mzvs1eAhC+dKbR8RzRWnyKby0Pjq8IeuTX8aCT/wKKPPYWqO839XfVQZvMPeGPaxk3d1PLMNYFdrBQA5eUfLB4qfzl0PYouP0RqTGFUtYjwPkiRm4h0y1V9sM7en8+hS0afwiC0UvbYzxiu3f4mBrujOS4ksYAqlGnqb2GFpIijb+0/3Zwze7Qc0MvQZ'
     templateId: d-16c5a50505b845ceba96425e30fbc196
+
+kafka:
+  bootstrapAddress: localhost:9092
+  groupId: ordersGroup
+  topic: orders
