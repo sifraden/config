@@ -43,7 +43,9 @@ spring:
         transaction-timeout-ms: 1000
         request-timeout-ms: 1000
         retry-backoff-ms: 1000
-
+kafka:
+  topic: orders
+  
 management:
   endpoints:
     web:
