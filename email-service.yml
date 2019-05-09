@@ -29,6 +29,9 @@ spring:
   zipkin:
     sender:
       type: web
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
 
 sendGrid:
   mail:
