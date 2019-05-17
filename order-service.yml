@@ -46,6 +46,7 @@ spring:
 kafka:
   consumer:
     topic: catchup-orders
+    groupId: catchupOrdersGroup
   producer:
     topic: orders
   
