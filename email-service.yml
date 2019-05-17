@@ -41,7 +41,6 @@ sendGrid:
     templateRefusedId: d-c2136dc4841949c9b0aa69b871fed307
 
 kafka:
-  consumer:
-    bootstrapAddress: localhost:9092
-    groupId: ordersGroup
-    topic: orders
+  bootstrapAddress: localhost:9092
+  groupId: ordersGroup
+  topic: orders
