@@ -47,5 +47,5 @@ kafka:
   consumer:
     topic: orders
   producer:
-    topic: catchupOrders
+    topic: catchup-orders
 

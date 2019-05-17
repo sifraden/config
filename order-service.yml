@@ -44,7 +44,10 @@ spring:
         request-timeout-ms: 1000
         retry-backoff-ms: 1000
 kafka:
-  topic: orders
+  consumer:
+    topic: orders
+  producer:
+    topic: catchup-orders
   
 management:
   endpoints:
