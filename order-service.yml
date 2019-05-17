@@ -45,9 +45,9 @@ spring:
         retry-backoff-ms: 1000
 kafka:
   consumer:
-    topic: orders
-  producer:
     topic: catchup-orders
+  producer:
+    topic: orders
   
 management:
   endpoints:
