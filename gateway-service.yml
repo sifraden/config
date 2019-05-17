@@ -26,6 +26,9 @@ zuul:
     order:
       path: /order/**
       serviceId: order-service
+    payment:
+      path: /payment/**
+      serviceId: payment-service
 
 #hystrix:
 #  command:
