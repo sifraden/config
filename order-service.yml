@@ -44,6 +44,7 @@ spring:
         request-timeout-ms: 1000
         retry-backoff-ms: 1000
 kafka:
+  bootstrapAddress: localhost:9092
   consumer:
     topic: catchup-orders
     groupId: catchupOrdersGroup
