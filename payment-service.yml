@@ -43,9 +43,9 @@ spring:
 
 kafka:
   bootstrapAddress: localhost:9092
-  groupId: paymentGroup
   consumer:
     topic: orders
+    groupId: paymentGroup
   producer:
     topic: catchup-orders
 
