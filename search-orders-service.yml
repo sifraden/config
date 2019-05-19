@@ -28,11 +28,10 @@ spring:
     sender:
       type: web
 
-
 kafka:
   bootstrapAddress: localhost:9092
-  groupId: products
-  topic: products
+  groupId: indexedOrders
+  topic: orders
 
 elasticsearch:
   name: elasticsearch
