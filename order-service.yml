@@ -46,6 +46,11 @@ spring:
   jackson:
     serialization:
       WRITE_DATE_KEYS_AS_TIMESTAMPS: false
+
+feign:
+  hystrix:
+    enabled: true
+    
 kafka:
   bootstrapAddress: localhost:9092
   consumer:
