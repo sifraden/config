@@ -1,0 +1,147 @@
+{  "settings": {
+    "analysis": {
+      "analyzer": {
+        "ngram_analyzer": {
+          "tokenizer": "ngram_tokenizer"
+        }
+      },
+      "tokenizer": {
+        "ngram_tokenizer": {
+          "type": "ngram",
+          "min_gram": 3,
+          "max_gram": 3,
+          "token_chars": [
+            "letter",
+            "digit"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "product": {
+      "properties": {
+      	 "id": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+       "reference": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+       "name": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+        "brand": {
+          "type": "text",
+          "analyzer": "ngram_analyzer",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+       "category": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+       "price": {
+          "type": "float",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+       "size": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+       "color": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+       "image": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+       "dimension": {
+		   "properties": {
+		   	"height": {
+		   		"type": "float"
+		   	},
+		   	"width": {
+		   		"type" : "float" 
+		   	},
+		   	"length": {
+		   		"type" : "float"
+		   	}
+		   }
+        },
+       "originalPrice": {
+          "type": "float",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+      "promotion": {
+          "type": "long",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+      "store": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+      "dateTime": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss",
+          "ignore_malformed": true,
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        }
+      }
+    }
+  }
+}

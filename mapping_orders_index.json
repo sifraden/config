@@ -1,0 +1,183 @@
+{
+  "mappings": {
+    "order": {
+      "properties": {
+        "id": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "userEmail": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "orderId": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "orderTime": {
+          "type": "date",
+          "format": "YYYY-MM-DD'T'HH:mm:ss",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "productName": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "productBrand": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "productId": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "productSize": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "productColor": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "productQte": {
+          "type": "float",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "unitPrice": {
+          "type": "float",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "userAddress": {
+          "properties": {
+            "address": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "postalCode": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "city": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "province": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "country": {
+              "type": "text",
+              "fields": {
+                "raw": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "orderStatus": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "paymentStatus": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "paymentTime": {
+          "type": "date",
+          "format": "YYYY-MM-DD'T'HH:mm:ss",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "shippingStatus": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "shippingTime": {
+          "type": "date",
+          "format": "YYYY-MM-DD'T'HH:mm:ss",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        }
+      }
+    }
+  }
+}
