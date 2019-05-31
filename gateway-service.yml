@@ -42,6 +42,11 @@ security:
       userAuthorizationUri: /authentication-service/oauth/authorize
       client-id: client
       client-secret: secret
+    resource:
+      jwt:
+        keyValue: "abc"
+      id: fooScope
+      service-id: ${PREFIX:}resource
 
 
 #hystrix:
