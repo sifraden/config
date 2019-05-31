@@ -29,6 +29,20 @@ zuul:
     payment:
       path: /payment/**
       serviceId: payment-service
+    authentication-service:
+      path: /**
+      sensitiveHeaders: Authorization
+      stripPrefix: false
+  add-proxy-headers: true
+
+security:
+  oauth2:
+    client:
+      access-token-uri: authentication-service
+      userAuthorizationUri: /authentication-service/oauth/authorize
+      client-id: client
+      client-secret: secret
+
 
 #hystrix:
 #  command:
