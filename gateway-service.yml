@@ -38,6 +38,7 @@ security:
       userAuthorizationUri: http://localhost:8080/oauth/authorize
       client-id: client
       client-secret: secret
+      clientAuthenticationScheme: form
 
 
 #hystrix:
