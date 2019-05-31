@@ -39,6 +39,10 @@ security:
       client-id: client
       client-secret: secret
       clientAuthenticationScheme: form
+  basic:
+    enabled: false
+
+
 
 
 #hystrix:
