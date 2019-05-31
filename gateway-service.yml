@@ -39,7 +39,7 @@ security:
   oauth2:
     client:
       access-token-uri: authentication-service
-      userAuthorizationUri: authentication-service/oauth/authorize
+      userAuthorizationUri: http://localhost:8080/oauth/authorize
       client-id: client
       client-secret: secret
     resource:
