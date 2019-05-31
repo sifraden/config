@@ -34,7 +34,7 @@ zuul:
 security:
   oauth2:
     client:
-      access-token-uri: http://localhost:8080/oauth/access_token
+      access-token-uri: http://localhost:8080/oauth/token
       userAuthorizationUri: http://localhost:8080/oauth/authorize
       client-id: client
       client-secret: secret
