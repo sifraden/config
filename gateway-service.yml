@@ -46,7 +46,7 @@ security:
       jwt:
         keyValue: "abc"
       id: fooScope
-      service-id: ${PREFIX:}resource
+      service-id: ${PREFIX:}authentication-service
 
 
 #hystrix:
