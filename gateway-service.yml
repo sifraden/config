@@ -35,18 +35,10 @@ zuul:
       stripPrefix: false
   add-proxy-headers: true
 
-security:
+spring:
   oauth2:
-    client:
-      access-token-uri: authentication-service
-      userAuthorizationUri: http://localhost:8080/oauth/authorize
-      client-id: client
-      client-secret: secret
     resource:
-      jwt:
-        keyValue: "abc"
-      id: fooScope
-      service-id: ${PREFIX:}authentication-service
+      userInfoUri: http://localhost:8080/authentication-service/
 
 
 #hystrix:
