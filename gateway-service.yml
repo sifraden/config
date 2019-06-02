@@ -2,6 +2,7 @@ server:
   port: 9090
 
 zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
   ignoredServices: "*"
   prefix: /api
   routes:
@@ -29,18 +30,9 @@ zuul:
     payment:
       path: /payment/**
       serviceId: payment-service
-
-
-security:
-  oauth2:
-    client:
-      access-token-uri: http://localhost:8080/oauth/token
-      userAuthorizationUri: http://localhost:8080/oauth/authorize
-      client-id: client
-      client-secret: secret
-      clientAuthenticationScheme: form
-  basic:
-    enabled: false
+    oauth:
+      path: /oauth/**
+      serviceId: authentication-service
 
 
 
