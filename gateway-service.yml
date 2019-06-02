@@ -31,7 +31,7 @@ zuul:
       path: /payment/**
       serviceId: payment-service
     oauth:
-      path: /oauth/**
+      path: /**
       serviceId: authentication-service
 
 security:
