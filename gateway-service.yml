@@ -32,7 +32,7 @@ zuul:
       serviceId: payment-service
     oauth:
       path: /oauth/**
-      url: authentication-service
+      serviceId: authentication-service
 
 security:
   oauth2:
