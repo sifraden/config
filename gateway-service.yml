@@ -32,7 +32,7 @@ zuul:
       serviceId: payment-service
     oauth:
       path: /oauth/**
-      url: http://localhost:8080/authentication-service/oauth
+      url: authentication-service
 
 security:
   oauth2:
