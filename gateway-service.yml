@@ -34,7 +34,11 @@ zuul:
       path: /oauth/**
       serviceId: authentication-service
 
-
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: 123
 
 
 #hystrix:
