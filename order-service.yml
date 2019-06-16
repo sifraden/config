@@ -50,7 +50,9 @@ spring:
 feign:
   hystrix:
     enabled: true
-    
+hystrix:
+  shareSecurityContext: true
+      
 kafka:
   bootstrapAddress: localhost:9092
   consumer:
