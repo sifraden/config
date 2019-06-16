@@ -52,7 +52,11 @@ feign:
     enabled: true
 hystrix:
   shareSecurityContext: true
-      
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE    
 kafka:
   bootstrapAddress: localhost:9092
   consumer:
