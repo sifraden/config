@@ -39,7 +39,11 @@ spring:
         max-in-flight-requests-per-connection: 1
         transaction-timeout-ms: 1000
         request-timeout-ms: 1000
-        retry-backoff-ms: 1000  
+        retry-backoff-ms: 1000
+        
+hystrix:
+  shareSecurityContext: true
+
 feign:
   hystrix:
     enabled: true
