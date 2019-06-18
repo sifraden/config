@@ -46,7 +46,7 @@ hystrix:
 
 feign:
   hystrix:
-    enabled: false
+    enabled: true
 
 kafka:
   bootstrapAddress: localhost:9092
