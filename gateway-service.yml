@@ -2,7 +2,7 @@ server:
   port: 9090
 
 zuul:
-  sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  sensitiveHeaders: Cookie,Set-Cookie
   ignoredServices: "*"
   prefix: /api
   routes:
