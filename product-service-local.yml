@@ -46,5 +46,8 @@ management:
 kafka:
   topic: products
 
+security:
+  active: true
+
 
 
