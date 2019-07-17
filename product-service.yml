@@ -29,6 +29,20 @@ spring:
   zipkin:
     sender:
       type: web
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      client-id: productId
+      acks: all
+      retries: 3
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      transaction-id-prefix: tx.
+      properties:
+        max-in-flight-requests-per-connection: 1
+        transaction-timeout-ms: 1000
+        request-timeout-ms: 1000
+        retry-backoff-ms: 1000
 
 management:
   endpoints:
@@ -39,7 +53,6 @@ management:
 
 kafka:
   topic: products
-  bootstrapAddress: localhost:9092
 
 security:
   active: true
