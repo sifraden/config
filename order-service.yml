@@ -1,6 +1,9 @@
 server:
   port: 0
 
+logging:
+  config: logback-spring.xml
+
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 30
