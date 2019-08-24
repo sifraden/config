@@ -26,7 +26,8 @@ spring:
       schema-action: create_if_not_exists
   sleuth:
     sampler:
-      percentage: 1
+      percentage: 1.0
+      probability: 1.0
   zipkin:
     sender:
       type: web
@@ -38,7 +39,7 @@ spring:
       retries: 3
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      transaction-id-prefix: tx.
+      #transaction-id-prefix: tx.
       properties:
         max-in-flight-requests-per-connection: 1
         transaction-timeout-ms: 1000
