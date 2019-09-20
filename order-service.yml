@@ -11,19 +11,19 @@ eureka:
     instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
     registryFetchIntervalSeconds: 30
 
 spring:
   rabbitmq:
-    host: localhost
+    host: ${RABBITMQ_SERVER:localhost}
     port: 5672
     username: guest
     password: '{cipher}AQAZms+f2Lq4wLcMnZMStTcVqBUCFyDU1GaLdFrOnxx7IkDkxxrxVB5loD6akcAQIy3dbzX0tEUf5kO/mWO66xjH9pWxRtGQdnSfeVVBVaYe5n8r7v6T6Vf5DD2RCtdnY5ROMLenTiwry6t/zylKsYWZs4xADj2yd5RCEpGdVIdS4p070UAuDY8H4om1bH94afsek6TE5e074Ns4mjBxubRSJbRANIbV1APpYOjmMQGylDbZaKm7CHCb3qBuO9JLX7ITht7x+ouIq92nKYsfMHjBH1trgT3k4JtUcxQnmiWvzC+lb89DH3k1mn45Eg11tqx0tWdJMo6pV8JTzF8tRokgdjzfXI0RmEzLDbGoYcC7JtuDUHEDnnwBHwVWFmG2cRE='
   data:
     cassandra:
       cluster-name: CassandraCluster
-      contact-points: localhost
+      contact-points: ${CASSANDRA_SERVER:localhost}
       port: 9042
       keyspace-name: orderkeyspace
       schema-action: create_if_not_exists
@@ -36,7 +36,7 @@ spring:
       type: web
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: ${KAFKA_SERVER:localhost:9092}
       client-id: orders
       acks: all
       retries: 3
@@ -63,7 +63,7 @@ hystrix:
         isolation:
           strategy: SEMAPHORE    
 kafka:
-  bootstrapAddress: localhost:9092
+  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
   consumer:
     topic: catchup-orders
     groupId: catchupOrdersGroup

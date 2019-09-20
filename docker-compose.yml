@@ -1,0 +1,104 @@
+version : '3'
+services:
+  config-server:
+    image: sifraden/config-server:1.0.0-SNAPSHOT
+    container_name: config-server
+    ports:
+      - 8888:8888
+    environment: 
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
+        -DRABBITMQ_SERVER=rabbitmq
+    depends_on:
+      - rabbitmq
+      - cas1
+      - redis-db_redis_1
+      - soufianeifraden_kafka_1
+    links:
+      - rabbitmq
+  discovery-service:
+    image: sifraden/discovery-service:1.0.0-SNAPSHOT
+    container_name: discovery-service
+    ports:
+      - 8761:8761
+    environment:
+      - JAVA_OPTS=
+        -DRABBITMQ_SERVER=rabbitmq
+    depends_on:
+      - config-server
+      - rabbitmq
+    links:
+      - rabbitmq
+  authentication-service:
+    image: sifraden/authentication-service:1.0.0-SNAPSHOT
+    container_name: authentication-service
+    ports: 
+      - 8080:8080
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
+        -DRABBITMQ_SERVER=rabbitmq
+    depends_on:
+      - config-server
+      - discovery-service
+      - rabbitmq
+      - redis-db_redis_1
+    links:
+      - rabbitmq
+      - redis-db_redis_1
+  gateway-service:
+    image: sifraden/gateway-service:1.0.0-SNAPSHOT
+    container_name: gateway-service
+    ports:
+      - 9090:9090
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
+        -DRABBITMQ_SERVER=rabbitmq
+    depends_on:
+      - config-server
+      - discovery-service
+      - authentication-service
+      - rabbitmq
+    links:
+      - rabbitmq
+  order-service:
+    image: sifraden/order-service:1.0.0-SNAPSHOT
+    container_name: order-service
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
+        -DRABBITMQ_SERVER=rabbitmq
+        -DKAFKA_SERVER=soufianeifraden_kafka_1
+        -DCASSANDRA_SERVER=cas1
+    depends_on:
+      - config-server
+      - discovery-service
+      - authentication-service
+      - gateway-service
+      - rabbitmq
+      - cas1
+      - soufianeifraden_kafka_1
+    links:
+      - rabbitmq
+      - cas1
+      - soufianeifraden_kafka_1
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports: 
+      - 5672:5672
+  redis-db_redis_1:
+    image: sameersbn/redis:latest
+    container_name: redis-db_redis_1
+  soufianeifraden_kafka_1:
+    image: wurstmeister/kafka:latest
+    container_name: soufianeifraden_kafka_1
+  cas1:
+    image: cassandra:latest
+    container_name: cas1
+
+
+
+
+
