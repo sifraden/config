@@ -7,7 +7,7 @@ spring:
       repositories:
         enabled: true
   redis:
-    host: ${REDIS_SERVER:localhost}
+    host: redis
     port: 9000
   rabbitmq:
     host: ${RABBITMQ_SERVER:localhost}
