@@ -30,7 +30,7 @@ spring:
       type: web
   kafka:
     producer:
-      bootstrap-servers: ${KAFKA_SERVER:localhost:9092}
+      bootstrap-servers: kafka:9092
       client-id: orders
       acks: all
       retries: 3
@@ -50,7 +50,7 @@ feign:
     enabled: true
 
 kafka:
-  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
+  bootstrapAddress: kafka:9092
   consumer:
     topic: orders
     groupId: paymentGroup
