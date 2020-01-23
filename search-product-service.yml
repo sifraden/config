@@ -37,4 +37,4 @@ kafka:
 elasticsearch:
   name: elasticsearch
   server: ${ELASTICSEARCH_SERVER:localhost}
-  port: 9300
+  port: ${ELASTICSEARCH_PORT:9200}
