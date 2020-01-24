@@ -30,7 +30,7 @@ spring:
 
 
 kafka:
-  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
+  bootstrapAddress: ${KAFKA_SERVER:localhost}
   groupId: products
   topic: products
 
