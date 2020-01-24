@@ -5,7 +5,7 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 30
     metadata-map:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id}}
   client:
     service-url:
       defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
