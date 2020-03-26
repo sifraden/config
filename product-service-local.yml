@@ -20,7 +20,7 @@ spring:
   data:
     mongodb:
       host: ${MONGO_SERVER:localhost}
-      port: 27017
+      port: 27019
       database: products
       #uri: mongodb://localhost/products
   sleuth:
