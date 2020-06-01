@@ -4,6 +4,11 @@ server:
 eureka:
   instance:
     hostname: ${DISCOVERY_HOSTNAME:discovery-service}
+    nonSecurePortEnabled: true
+    nonSecurePort: 80
+    homePageUrl: http://${eureka.instance.hostname}/
+    statusPageUrl: http://${eureka.instance.hostname}/actuator/info/
+    healthCheckUrl: http://${eureka.instance.hostname}/actuator/health/
   client:
     registerWithEureka: false
     fetchRegistry: false
