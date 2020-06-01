@@ -13,7 +13,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://discovery-service-got-it-project.192.168.64.3.nip.io/eureka
+      defaultZone: http://discovery-service-got-it-project.192.168.64.3.nip.io:8761/eureka
       #http://${eureka.instance.hostname}:${server.port}/eureka/
 
 spring:
