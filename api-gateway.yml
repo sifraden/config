@@ -69,15 +69,6 @@ spring:
 
   #      default-filters:
 #        - TokenRelay
-  eureka:
-    instance:
-      leaseRenewalIntervalInSeconds: 30
-    metadataMap:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
-    client:
-      serviceUrl:
-        defaultZone: http://discovery-service:8761/eureka
-      registryFetchIntervalSeconds: 5
 
   security:
     oauth2:
@@ -108,7 +99,16 @@ spring:
         jwt:
           issuer-uri: ${ISSUER_URI:http://keycloak-keycloak.192.168.99.101.nip.io/auth/realms/api-gateway}
           jwk-set-uri: ${JWK_SET_URI:http://keycloak-keycloak.192.168.99.101.nip.io/auth/realms/api-gateway/protocol/openid-connect/certs}
-
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+  metadataMap:
+    instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+  client:
+    serviceUrl:
+    defaultZone: ${EUREKA_SERVER:http://discovery-service:8761/eureka}
+    registryFetchIntervalSeconds: 5
+      
 logging:
   level:
     root: INFO
@@ -116,4 +116,3 @@ logging:
     org.springframework.security: INFO
     org.springframework.security.oauth2: INFO
     org.springframework.cloud.gateway: INFO
-test.props: test
