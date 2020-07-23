@@ -63,7 +63,7 @@ fallback:
       price: 70,30
       size: M,S
       colors: Black,White
-      log: https://www.festisite.com/static/partylogo/img/logos/nike.png,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Carhartt_logo.svg/1200px-Carhartt_logo.svg.png
+      logo: https://www.festisite.com/static/partylogo/img/logos/nike.png,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Carhartt_logo.svg/1200px-Carhartt_logo.svg.png
       images: https://images.asos-media.com/products/nike-logo-crew-sweat-in-white-804340-100/7134528-3?$XXL$&wid=513&fit=constrain,https://cdn-images.farfetch-contents.com/13/56/66/14/13566614_16285570_1000.jpg      
     
 
