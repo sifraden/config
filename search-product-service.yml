@@ -30,5 +30,5 @@ kafka:
   topic: products
 
 elasticsearch:
-  name: elasticsearch
+  index: store_products
   server: ${ELASTICSEARCH_SERVER:localhost:9200}
