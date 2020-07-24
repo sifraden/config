@@ -58,6 +58,26 @@ kafka:
 
 security:
   active: true
-
+  
+fallback:
+  products:
+    men:
+      id: 12345,56789
+      name: Sweat Crew II,Shirt Retro
+      brand: Nike,Carhartt
+      price: 70,30
+      size: M,S
+      colors: Black,White
+      logo: https://www.festisite.com/static/partylogo/img/logos/nike.png,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Carhartt_logo.svg/1200px-Carhartt_logo.svg.png
+      images: https://images.asos-media.com/products/nike-logo-crew-sweat-in-white-804340-100/7134528-3?$XXL$&wid=513&fit=constrain,https://cdn-images.farfetch-contents.com/13/56/66/14/13566614_16285570_1000.jpg      
+    women:
+      id: 9876,4321
+      name: Classic Girl Bomber,Top 90's
+      brand: Carhartt,Obey
+      price: 80,40
+      size: S,S
+      colors: Black,White
+      logo: https://1000logos.net/wp-content/uploads/2017/07/Obey-Logo.png,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Carhartt_logo.svg/1200px-Carhartt_logo.svg.png
+      images: https://i1.adis.ws/i/carhartt_wip/I025115_05V_90-ST-01/w-deming-jacket-panther-print-blast-red-black-black-1739.png?$pdp_zoom$,https://image.s5a.com/is/image/TheBay/193259181863_main?wid=984&hei=1312&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0    
 
 
