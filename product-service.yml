@@ -14,7 +14,7 @@ eureka:
 spring:
   data:
     mongodb:
-      host: ${MONGO_SERVER:mongo.mongo.svc.cluster.nip.io}
+      host: ${MONGO_SERVER:mongodb.mongo.svc.cluster.nip.io}
       port: ${MONGO_PORT:27017}
       database: products
       #uri: mongodb://localhost/products
