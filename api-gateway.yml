@@ -10,12 +10,6 @@ spring:
             - Path= /product/**
           filters:
             - RewritePath= /product(?<segment>/?.*), $\{segment}
-            - name: Retry
-              args:
-                retries: 3
-                statuses: SERVICE_UNAVAILABLE
-                backoff:
-                  firstBackoff: 1000ms
         - id: user-service
           uri: lb://user-service
           predicates:
