@@ -16,6 +16,8 @@ spring:
     mongodb:
       host: ${MONGO_SERVER:mongodb.mongo.svc.cluster.nip.io}
       port: ${MONGO_PORT:27017}
+      usernane: admin
+      password: passw0rd
       database: products
       #uri: mongodb://localhost/products
   sleuth:
