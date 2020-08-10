@@ -2,6 +2,9 @@ server:
   port: 8080
 spring:
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
     gateway:
       routes:
         - id: product-service
@@ -50,6 +53,7 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      
       globalcors:
         cors-configurations:
           '[/**]':
