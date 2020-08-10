@@ -28,7 +28,7 @@ spring:
       type: web
   kafka:
     producer:
-      bootstrap-servers: ${KAFKA_SERVER:my-cluster-kafka-bootstrap.kafka.svc:9092}
+      bootstrap-servers: ${KAFKA_SERVER:my-cluster-kafka-0.my-cluster-kafka-bootstrap.kafka.svc:9092}
       client-id: productId
       acks: all
       retries: 3
@@ -40,7 +40,7 @@ spring:
         request-timeout-ms: 1000
         retry-backoff-ms: 1000
     consumer:
-      bootstrap-servers: ${KAFKA_SERVER:my-cluster-kafka-bootstrap.kafka.svc:9092}
+      bootstrap-servers: ${KAFKA_SERVER:my-cluster-kafka-0.my-cluster-kafka-bootstrap.kafka.svc:9092}
 
 management:
   endpoints:
