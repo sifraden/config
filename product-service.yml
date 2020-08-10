@@ -19,7 +19,7 @@ spring:
       #usernane: admin
       #password: passw0rd
       #database: products
-      uri: mongodb://admin:passw0rd@mongodb/products
+      uri: mongodb.mongo.svc://admin:passw0rd@mongodb/products
   sleuth:
     sampler:
       percentage: 1
