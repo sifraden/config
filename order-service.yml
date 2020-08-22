@@ -23,7 +23,7 @@ spring:
   data:
     cassandra:
       cluster-name: CassandraCluster
-      contact-points: ${CASSANDRA_SERVER:localhost}
+      contact-points: ${CASSANDRA_SERVER:cassandra.cassandra.svc}
       port: 9042
       keyspace-name: orderkeyspace
       local-datacenter: datacenter1
