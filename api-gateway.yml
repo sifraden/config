@@ -32,7 +32,7 @@ spring:
           filters:
             - RewritePath= /elastic(?<segment>/?.*), $\{segment}
         - id: email-service
-          uri: lb://email-service
+          uri: http://email-service:8080
           predicates:
             - Path= /mail/**
           filters:
