@@ -38,7 +38,7 @@ spring:
           filters:
             - RewritePath= /mail(?<segment>/?.*), $\{segment}
         - id: order-service
-          uri: lb://order-service
+          uri: http://order-service:8080
           predicates:
             - Path= /order/**
           filters:
