@@ -1,0 +1,79 @@
+server:
+  port: 0
+
+logging:
+  config: classpath:logback-spring.xml
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+  metadataMap:
+    instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+    registryFetchIntervalSeconds: 30
+
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_SERVER:localhost}
+    port: 5672
+    username: guest
+    password: '{cipher}AQAZms+f2Lq4wLcMnZMStTcVqBUCFyDU1GaLdFrOnxx7IkDkxxrxVB5loD6akcAQIy3dbzX0tEUf5kO/mWO66xjH9pWxRtGQdnSfeVVBVaYe5n8r7v6T6Vf5DD2RCtdnY5ROMLenTiwry6t/zylKsYWZs4xADj2yd5RCEpGdVIdS4p070UAuDY8H4om1bH94afsek6TE5e074Ns4mjBxubRSJbRANIbV1APpYOjmMQGylDbZaKm7CHCb3qBuO9JLX7ITht7x+ouIq92nKYsfMHjBH1trgT3k4JtUcxQnmiWvzC+lb89DH3k1mn45Eg11tqx0tWdJMo6pV8JTzF8tRokgdjzfXI0RmEzLDbGoYcC7JtuDUHEDnnwBHwVWFmG2cRE='
+  data:
+    cassandra:
+      cluster-name: CassandraCluster
+      contact-points: ${CASSANDRA_SERVER:localhost}
+      port: 9042
+      keyspace-name: orderkeyspace
+      schema-action: create_if_not_exists
+  sleuth:
+    sampler:
+      percentage: 1.0
+      probability: 1.0
+  zipkin:
+    sender:
+      type: web
+  kafka:
+    producer:
+      bootstrap-servers: ${KAFKA_SERVER:localhost:9092}
+      client-id: orders
+      acks: all
+      retries: 3
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      #transaction-id-prefix: tx.
+      properties:
+        max-in-flight-requests-per-connection: 1
+        transaction-timeout-ms: 1000
+        request-timeout-ms: 1000
+        retry-backoff-ms: 1000
+  jackson:
+    serialization:
+      WRITE_DATE_KEYS_AS_TIMESTAMPS: false
+
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE    
+kafka:
+  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
+  consumer:
+    topic: catchup-orders
+    groupId: catchupOrdersGroup
+  producer:
+    topic: orders
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+

@@ -54,7 +54,23 @@
             }
           }
         },
+        "sex": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
        "category": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        },
+      "logo": {
           "type": "text",
           "fields": {
             "raw": { 
@@ -78,7 +94,7 @@
             }
           }
         },
-       "color": {
+       "colors": {
           "type": "text",
           "fields": {
             "raw": { 
@@ -86,7 +102,7 @@
             }
           }
         },
-       "image": {
+       "images": {
           "type": "text",
           "fields": {
             "raw": { 
