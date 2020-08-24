@@ -16,8 +16,8 @@ spring:
     mongodb:
       host: ${MONGO_SERVER:mongodb.mongo.svc}
       port: ${MONGO_PORT:27017}
-      #username: admin
-      #password: passw0rd
+      username: admin
+      password: passw0rd
       database: products
       #uri: mongodb.mongo.svc://admin:passw0rd@mongodb/products
   sleuth:
