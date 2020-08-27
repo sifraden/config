@@ -1,0 +1,117 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      routes:
+        - id: product-service
+          uri: http://localhost:8082
+          predicates:
+            - Path= /product/**
+          filters:
+            - RewritePath= /product(?<segment>/?.*), $\{segment}
+        - id: user-service
+          uri: http://localhost:8083
+          predicates:
+            - Path= /user/**
+          filters:
+            - RewritePath= /user(?<segment>/?.*), $\{segment}
+        - id: promotion-service
+          uri: lb://promotion-service
+          predicates:
+            - Path= /promotion/**
+          filters:
+            - RewritePath= /promotion(?<segment>/?.*), $\{segment}
+        - id: search-product-service
+          uri: http://localhost:8084
+          predicates:
+            - Path= /elastic/**
+          filters:
+            - RewritePath= /elastic(?<segment>/?.*), $\{segment}
+        - id: email-service
+          uri: http://localhost:8085
+          predicates:
+            - Path= /mail/**
+          filters:
+            - RewritePath= /mail(?<segment>/?.*), $\{segment}
+        - id: order-service
+          uri: http://localhost:8086
+          predicates:
+            - Path= /order/**
+          filters:
+            - RewritePath= /order(?<segment>/?.*), $\{segment}
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path= /payment/**
+          filters:
+            - RewritePath= /payment(?<segment>/?.*), $\{segment}
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+        add-to-simple-url-handler-mapping: true
+
+  #      default-filters:
+#        - TokenRelay
+
+  security:
+    oauth2:
+#      client:
+#        registration:
+#          api-gateway:
+#            provider: keycloak
+#            client-id: api-gateway-client
+#            client-secret: 05807f3c-7d3d-4c4a-ade4-2db7f70abc51
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+#            #redirect-uri: "http://localhost:9191/authorize/oauth2/code/{registrationId}"
+#            scope: openid
+#        provider:
+#          keycloak:
+#            issuer-uri: http://localhost:8080/auth/realms/api-gateway
+            #http://localhost:8080/auth/realms/api-gateway
+            #authorization-uri: http://localhost:8282/oauth/token
+            #authorization-uri: http://localhost:8080/auth/realms/api-gateway/protocol/openid-connect/auth
+            #token-uri: http://localhost:8282/oauth/token
+            #token-uri: http://localhost:8080/auth/realms/api-gateway/protocol/openid-connect/token
+            #user-info-uri: http://localhost:8282/resources/userinfo
+            #user-info-uri: http://localhost:8080/auth/realms/api-gateway/protocol/openid-connect/userinfo
+            #jwk-set-uri: http://localhost:8080/auth/realms/api-gateway/protocol/openid-connect/certs
+            #user-name-attribute: preferred_username
+#
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URI:http://keycloak-keycloak.192.168.99.101.nip.io/auth/realms/api-gateway}
+          jwk-set-uri: ${JWK_SET_URI:http://keycloak-keycloak.192.168.99.101.nip.io/auth/realms/api-gateway/protocol/openid-connect/certs}
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+  metadataMap:
+    instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://discovery-service:8761/eureka}
+    registryFetchIntervalSeconds: 30
+      
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+    org.springframework.cloud.gateway: INFO
