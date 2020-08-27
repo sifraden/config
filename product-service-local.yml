@@ -52,7 +52,6 @@ management:
       exposure:
         include: "*"
 
-
 kafka:
   topic: products
 
