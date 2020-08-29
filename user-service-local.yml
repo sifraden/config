@@ -9,5 +9,9 @@ spring:
   session:
     redis:
       flush-mode: IMMEDIATE
-  
+      
+  management:
+    endpoint:
+     health:
+      show-details: always
     
