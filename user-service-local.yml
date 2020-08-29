@@ -10,8 +10,11 @@ spring:
     redis:
       flush-mode: IMMEDIATE
       
-  management:
-    endpoint:
-     health:
+management:
+  endpoint:
+    health:
       show-details: always
+  health:
+    redis:
+      enabled: true
     
