@@ -19,8 +19,8 @@ spring:
     password: '{cipher}AQAZms+f2Lq4wLcMnZMStTcVqBUCFyDU1GaLdFrOnxx7IkDkxxrxVB5loD6akcAQIy3dbzX0tEUf5kO/mWO66xjH9pWxRtGQdnSfeVVBVaYe5n8r7v6T6Vf5DD2RCtdnY5ROMLenTiwry6t/zylKsYWZs4xADj2yd5RCEpGdVIdS4p070UAuDY8H4om1bH94afsek6TE5e074Ns4mjBxubRSJbRANIbV1APpYOjmMQGylDbZaKm7CHCb3qBuO9JLX7ITht7x+ouIq92nKYsfMHjBH1trgT3k4JtUcxQnmiWvzC+lb89DH3k1mn45Eg11tqx0tWdJMo6pV8JTzF8tRokgdjzfXI0RmEzLDbGoYcC7JtuDUHEDnnwBHwVWFmG2cRE='
   data:
     mongodb:
-      host: ${MONGO_SERVER:mongo} #localhost
-      port: 27017 #27018
+      host: ${MONGO_SERVER:localhost}
+      port: ${MONGO_PORT:27018}
       database: products
       #uri: mongodb://localhost/products
   sleuth:
