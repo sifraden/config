@@ -99,8 +99,8 @@ spring:
 #
       resourceserver:
         jwt:
-          issuer-uri: ${ISSUER_URI:http://keycloak-keycloak.192.168.99.101.nip.io/auth/realms/api-gateway}
-          jwk-set-uri: ${JWK_SET_URI:http://keycloak-keycloak.192.168.99.101.nip.io/auth/realms/api-gateway/protocol/openid-connect/certs}
+          issuer-uri: ${ISSUER_URI:http://keycloak.192.168.64.4.nip.io:30815/auth/realms/api-gateway}
+          jwk-set-uri: ${JWK_SET_URI:http://keycloak.192.168.64.4.nip.io:30815/auth/realms/api-gateway/protocol/openid-connect/certs}
       
 logging:
   level:
