@@ -1,5 +1,5 @@
 server:
-  port: 8085
+  port: 8080
 
 management:
   endpoints:
@@ -9,11 +9,6 @@ management:
 spring:
   sendgrid: 
     api-key: '{cipher}AQBdiXumdv4dl1+JczDxrPjyOuc6sUHiXy/dOVtcwdKww9D8gqzxkKowh9eS6RYvpUYgKT14NOt1ZLATkcKb6KrhshqhBFINcyEyiafg7k6Dm1coprJSyz3MwP6D5VxTyGXTPVGYK+57jYw7SENbHGD5y/1Uxl1MpNqEgCatj2wsCoGQ0/AqbhEgGLonYKMwUctYymzhNMBkse2UQvcUQsG8lwxsXRWh41VyQSw915zXqRlk1gHsq3VjelR96GkhFitbMfWLUcFeN/YHiNV+WYv2cJrhIlQUrjRMQwB75NpYca+5RXuD21PZ4rdtnItwYtLyQC7/URn3osTvK3J5gzyKcxAB2Oc+D9hqE1fD91kiVlbhcgqHFcHyK1zn5rv/W8HMaLZ2uweJ1IND+X6CeZ6yPLK+AWkSLXGkPSJy13f8X27TyZdutkLvSIW9Pe4/rUq/SbMhseXk3rtCgxPfvBum'
-  #rabbitmq:
-  #  host: ${RABBITMQ_SERVER:localhost}
-  #  port: 5672
-  #  username: guest
-  #  password: '{cipher}AQAZms+f2Lq4wLcMnZMStTcVqBUCFyDU1GaLdFrOnxx7IkDkxxrxVB5loD6akcAQIy3dbzX0tEUf5kO/mWO66xjH9pWxRtGQdnSfeVVBVaYe5n8r7v6T6Vf5DD2RCtdnY5ROMLenTiwry6t/zylKsYWZs4xADj2yd5RCEpGdVIdS4p070UAuDY8H4om1bH94afsek6TE5e074Ns4mjBxubRSJbRANIbV1APpYOjmMQGylDbZaKm7CHCb3qBuO9JLX7ITht7x+ouIq92nKYsfMHjBH1trgT3k4JtUcxQnmiWvzC+lb89DH3k1mn45Eg11tqx0tWdJMo6pV8JTzF8tRokgdjzfXI0RmEzLDbGoYcC7JtuDUHEDnnwBHwVWFmG2cRE='
   sleuth:
     sampler:
       percentage: 1
@@ -26,13 +21,13 @@ spring:
 
 sendGrid:
   mail:
-    from: '{cipher}AQCF9/SQ5W2sQY6Cs1t45zWoDEp8STPa42t/JAmIGTNjr1DfGha1IYMgK6D9biVDOaAUOIVufei5sut5t/dpsMTJOpu86E/rqkvP6oYLx13vA+8awI15GcesH1TEGZyAXO1GV644VZw2Pc8OMG/CjMsQ6CVDhL/rJPbPEWHuRc8bM9P9qO2lXuEjwXwxsZItSHgdDAebwWmzKTY563aySc/eI2H/Mzvs1eAhC+dKbR8RzRWnyKby0Pjq8IeuTX8aCT/wKKPPYWqO839XfVQZvMPeGPaxk3d1PLMNYFdrBQA5eUfLB4qfzl0PYouP0RqTGFUtYjwPkiRm4h0y1V9sM7en8+hS0afwiC0UvbYzxiu3f4mBrujOS4ksYAqlGnqb2GFpIijb+0/3Zwze7Qc0MvQZ'
+    from: '{cipher}AQCHkD6OUvyvrcFmDR0XX7oSj9G4ZyXAt7+stFamP2rMtapgZjzT0UAU1ZDZNYPMdt2LV/+55q29YSqWMNEAomZrjItx1oeAbQ6oXBgkZW4f6YagjDdE6B0iwODkAoNP1xKAlyR/nbGgTmnGglLP+DmaKJsplkfpKO4H84rxouM+mnjfDkIJc+5JeDDAkxkRjoNfP4EF742VVlAYfjJuowZEsV1V1+vhRGucsPfpsWWpZkDCNffajB7gCtYqtBdQXZeW5x537uOVVM6FisemeS6PwO0274B44d+o5BB0ywO4D9bcvQHZbIOAI2y7Qxd3Vqe2+TgUoCgMHBGSkX3KUp1YaDdgl7GkNaPt5LGNBbVNl0jgFybkDaBjutTa+MGylOXgCU6KA8VTYfNEyaWcJSkO'
     templateConfirmationId: d-16c5a50505b845ceba96425e30fbc196
     templatePendingId: d-842d74a4b0d14881b640f5bac1899e2b
     templateRefusedId: d-c2136dc4841949c9b0aa69b871fed307
     templateContact: d-3501983e85884ab29135f6d2d2527625
 
 kafka:
-  bootstrapAddress: ${KAFKA_SERVER:my-cluster-kafka-0.my-cluster-kafka-brokers.kafka.svc:9092}
+  bootstrapAddress: ${KAFKA_SERVER:my-cluster-kafka-0.my-cluster-kafka-brokers.kafka:9092}
   groupId: ordersGroup
   topic: orders
