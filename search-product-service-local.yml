@@ -1,0 +1,34 @@
+server:
+  port: 8084
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30
+    metadata-map:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id}}
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+spring:
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    sender:
+      type: web
+
+
+kafka:
+  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
+  groupId: products
+  topic: products
+
+elasticsearch:
+  index: store_products
+  server: ${ELASTICSEARCH_SERVER:localhost:9200}
