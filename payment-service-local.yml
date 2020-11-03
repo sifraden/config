@@ -36,3 +36,4 @@ stripe:
 
 order:
  url: http://localhost:8086
+ redirect: http://localhost:3000/processing
