@@ -6,14 +6,7 @@ management:
     web:
       exposure:
         include: "*"
-spring:
-  sleuth:
-    sampler:
-      percentage: 1
-  zipkin:
-    sender:
-      type: web
-
+        
 kafka:
   bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
   groupId: indexedOrders
