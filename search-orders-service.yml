@@ -1,14 +1,5 @@
 server:
-  port: 0
-
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 30
-    metadata-map:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
-  client:
-    service-url:
-      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+  port: 8089
 
 management:
   endpoints:
@@ -16,11 +7,6 @@ management:
       exposure:
         include: "*"
 spring:
-  rabbitmq:
-    host: ${RABBITMQ_SERVER:localhost}
-    port: 5672
-    username: guest
-    password: '{cipher}AQAZms+f2Lq4wLcMnZMStTcVqBUCFyDU1GaLdFrOnxx7IkDkxxrxVB5loD6akcAQIy3dbzX0tEUf5kO/mWO66xjH9pWxRtGQdnSfeVVBVaYe5n8r7v6T6Vf5DD2RCtdnY5ROMLenTiwry6t/zylKsYWZs4xADj2yd5RCEpGdVIdS4p070UAuDY8H4om1bH94afsek6TE5e074Ns4mjBxubRSJbRANIbV1APpYOjmMQGylDbZaKm7CHCb3qBuO9JLX7ITht7x+ouIq92nKYsfMHjBH1trgT3k4JtUcxQnmiWvzC+lb89DH3k1mn45Eg11tqx0tWdJMo6pV8JTzF8tRokgdjzfXI0RmEzLDbGoYcC7JtuDUHEDnnwBHwVWFmG2cRE='
   sleuth:
     sampler:
       percentage: 1
@@ -34,6 +20,5 @@ kafka:
   topic: orders
 
 elasticsearch:
-  name: elasticsearch
-  server: ${ELASTIC_SERVER:localhost}
-  port: 9300
+  index: store_orders
+  server: ${ELASTICSEARCH_SERVER:localhost:9200}
