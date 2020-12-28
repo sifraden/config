@@ -25,9 +25,14 @@ spring:
 kafka:
   bootstrapAddress: localhost:9092
   consumer:
+    nack:
+      topic: nackOrders
+      groupId: nackOrders
     topic: orders
     groupId: paymentGroup
   producer:
+    nack:
+      topic: nackOrders
     topic: catchup-orders
 
 stripe:
