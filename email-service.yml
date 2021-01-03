@@ -35,4 +35,4 @@ kafka:
 
 users:
   subscriptions:
-    url: http://localhost:9090/user/subscription/
+    url: http://localhost:9090/user/subscription
