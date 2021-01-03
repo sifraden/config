@@ -21,7 +21,7 @@ spring:
 
 sendGrid:
   mail:
-    from: '{cipher}AQCHkD6OUvyvrcFmDR0XX7oSj9G4ZyXAt7+stFamP2rMtapgZjzT0UAU1ZDZNYPMdt2LV/+55q29YSqWMNEAomZrjItx1oeAbQ6oXBgkZW4f6YagjDdE6B0iwODkAoNP1xKAlyR/nbGgTmnGglLP+DmaKJsplkfpKO4H84rxouM+mnjfDkIJc+5JeDDAkxkRjoNfP4EF742VVlAYfjJuowZEsV1V1+vhRGucsPfpsWWpZkDCNffajB7gCtYqtBdQXZeW5x537uOVVM6FisemeS6PwO0274B44d+o5BB0ywO4D9bcvQHZbIOAI2y7Qxd3Vqe2+TgUoCgMHBGSkX3KUp1YaDdgl7GkNaPt5LGNBbVNl0jgFybkDaBjutTa+MGylOXgCU6KA8VTYfNEyaWcJSkO'
+    from: contact@naybxrz.com
     templateConfirmationId: d-16c5a50505b845ceba96425e30fbc196
     templatePendingId: d-842d74a4b0d14881b640f5bac1899e2b
     templateRefusedId: d-c2136dc4841949c9b0aa69b871fed307
