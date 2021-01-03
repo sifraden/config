@@ -39,16 +39,6 @@ spring:
     serialization:
       WRITE_DATE_KEYS_AS_TIMESTAMPS: false
 
-feign:
-  hystrix:
-    enabled: true
-hystrix:
-  shareSecurityContext: true
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: SEMAPHORE    
 kafka:
   bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
   consumer:
@@ -56,6 +46,9 @@ kafka:
     groupId: catchupOrdersGroup
   producer:
     topic: orders
+    
+consumer:
+  payment-service: http://localhost:8087
   
 management:
   endpoints:

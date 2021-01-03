@@ -26,8 +26,13 @@ sendGrid:
     templatePendingId: d-842d74a4b0d14881b640f5bac1899e2b
     templateRefusedId: d-c2136dc4841949c9b0aa69b871fed307
     templateContact: d-3501983e85884ab29135f6d2d2527625
+    templateSubscriptionId: d-45d928c780ac40bc9c534497e1f63f21
 
 kafka:
   bootstrapAddress: ${KAFKA_SERVER:my-cluster-kafka-0.my-cluster-kafka-brokers.kafka:9092}
   groupId: ordersGroup
   topic: orders
+
+users:
+  subscriptions:
+    url: http://localhost:9090/user/subscription
