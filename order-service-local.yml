@@ -5,6 +5,8 @@ logging:
   config: classpath:logback-spring.xml
 
 spring:
+  application:
+    name: order-service
   config:
     use-legacy-processing: true
     import: optional:configserver:http://localhost:88989
