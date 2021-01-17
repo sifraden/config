@@ -4,10 +4,11 @@ server:
 logging:
   config: classpath:logback-spring.xml
 
-
 spring:
   config:
     use-legacy-processing: true
+    activate:
+      on-profile: local
   data:
     cassandra:
       cluster-name: CassandraCluster
