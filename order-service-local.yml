@@ -7,8 +7,8 @@ logging:
 spring:
   config:
     use-legacy-processing: true
-    activate:
-      on-profile: local
+    import: optional:configserver:http://localhost:88989
+
   data:
     cassandra:
       cluster-name: CassandraCluster
