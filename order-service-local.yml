@@ -15,7 +15,7 @@ spring:
       contact-points: ${CASSANDRA_SERVER:localhost}
       port: 9042
       keyspace-name: orderkeyspace
-      local-datacenter: DC1
+      local-datacenter: datacenter1
       schema-action: create_if_not_exists
   sleuth:
     sampler:
