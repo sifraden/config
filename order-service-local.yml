@@ -6,6 +6,8 @@ logging:
 
 
 spring:
+  config:
+    use-legacy-processing: true
   data:
     cassandra:
       cluster-name: CassandraCluster
@@ -18,9 +20,6 @@ spring:
     sampler:
       percentage: 1.0
       probability: 1.0
-  zipkin:
-    sender:
-      type: web
   kafka:
     producer:
       bootstrap-servers: ${KAFKA_SERVER:localhost:9092}
