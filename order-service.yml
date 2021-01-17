@@ -5,15 +5,15 @@ logging:
   config: classpath:logback-spring.xml
 
 spring:
-  profiles:
-    include: local
+  config:
+    use-legacy-processing: true
   data:
     cassandra:
       cluster-name: CassandraCluster
       contact-points: ${CASSANDRA_SERVER:cassandra.cassandra}
       port: 9042
       keyspace-name: orderkeyspace
-      local-datacenter: datacenter1
+      local-datacenter: DC1
       schema-action: create_if_not_exists
   sleuth:
     sampler:
@@ -57,66 +57,4 @@ management:
       exposure:
         include: "*"
         
----
-spring:
-  config:
-    activate:
-      on-profile: local
-server:
-  port: 8086
-
-logging:
-  config: classpath:logback-spring.xml
-
-spring:
-  config:
-    use-legacy-processing: true
-    activate:
-      on-profile: local
-  data:
-    cassandra:
-      cluster-name: CassandraCluster
-      contact-points: ${CASSANDRA_SERVER:localhost}
-      port: 9042
-      keyspace-name: orderkeyspace
-      local-datacenter: DC1
-      schema-action: create_if_not_exists
-  sleuth:
-    sampler:
-      percentage: 1.0
-      probability: 1.0
-  kafka:
-    producer:
-      bootstrap-servers: ${KAFKA_SERVER:localhost:9092}
-      client-id: orders
-      acks: all
-      retries: 3
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      #transaction-id-prefix: tx.
-      properties:
-        max-in-flight-requests-per-connection: 1
-        transaction-timeout-ms: 1000
-        request-timeout-ms: 1000
-        retry-backoff-ms: 1000
-  jackson:
-    serialization:
-      WRITE_DATE_KEYS_AS_TIMESTAMPS: false
-
-kafka:
-  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
-  consumer:
-    topic: catchup-orders
-    groupId: catchupOrdersGroup
-  producer:
-    topic: orders
-    
-consumer:
-  payment-service: http://localhost:8087
-  
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 
