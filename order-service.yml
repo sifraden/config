@@ -5,8 +5,8 @@ logging:
   config: classpath:logback-spring.xml
 
 spring:
-  config:
-    use-legacy-processing: true
+  profiles:
+    include: local
   data:
     cassandra:
       cluster-name: CassandraCluster
@@ -57,7 +57,7 @@ management:
       exposure:
         include: "*"
         
--------------
+---
 spring:
   config:
     activate:
