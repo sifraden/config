@@ -27,6 +27,7 @@ sendGrid:
     templateRefusedId: d-c2136dc4841949c9b0aa69b871fed307
     templateContact: d-3501983e85884ab29135f6d2d2527625
     templateSubscriptionId: d-45d928c780ac40bc9c534497e1f63f21
+    templateShippedId: d-92d0d73f744c4f07ab47c003ea4a1704
 
 
 kafka:
