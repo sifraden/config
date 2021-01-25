@@ -31,4 +31,4 @@ kafka:
 
 users:
   subscriptions:
-    url: http://localhost:8083/subscription
+    url: http://localhost:8083
