@@ -54,7 +54,7 @@ management:
         
 opentracing:
   jaeger:
-    log-spans: false
+    log-spans: true
     udp-sender:
       host: localhost
       port: 6831
