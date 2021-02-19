@@ -9,6 +9,16 @@ spring:
   session:
     redis:
       flush-mode: IMMEDIATE
+  sleuth:
+    sampler:
+      percentage: 1.0
+      probability: 1.0
+    opentracing:
+        enabled: true
+    traceId128: true
+  zipkin:
+    baseUrl: http://localhost:9411
+ 
       
 management:
   endpoint:
