@@ -3,6 +3,10 @@ server:
 
 #logging:
 #  config: classpath:logback-spring.xml
+logging:
+  pattern:
+    level: "%5p [${spring.zipkin.service.name:${spring.application.name:-}},%X{X-Span-Export:-},%X{traceId:-},%X{spanId:-},%X{correlationID:-}]"
+ 
 
 spring:
   data:
@@ -19,8 +23,10 @@ spring:
       probability: 1.0
       opentracing:
         enabled: true
-      reactor:
-        instrumentation-type: MANUAL
+    trace-id128: true
+  log:
+    slf4j:
+      enabled: true
   zipkin:
     baseUrl: http://localhost:9411
   kafka:
