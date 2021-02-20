@@ -94,3 +94,4 @@ logging:
     org.springframework.security: INFO
     org.springframework.security.oauth2: INFO
     org.springframework.cloud.gateway: INFO
+  config: classpath:logback-spring.xml
