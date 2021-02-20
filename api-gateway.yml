@@ -103,6 +103,7 @@ spring:
           jwk-set-uri: ${JWK_SET_URI:http://192.168.64.4:30080/auth/realms/api-gateway/protocol/openid-connect/certs}
       
 logging:
+  config: classpath:logback-spring.xml
   level:
     root: INFO
     org.springframework.web: INFO
