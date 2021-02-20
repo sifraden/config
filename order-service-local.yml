@@ -48,6 +48,9 @@ kafka:
     groupId: catchupOrdersGroup
   producer:
     topic: orders
+
+bootstrap:
+  servers: ${KAFKA_SERVER:localhost:9092}
     
 consumer:
   payment-service: http://localhost:8087
