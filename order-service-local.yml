@@ -21,8 +21,8 @@ spring:
         enabled: true
   zipkin:
     baseUrl: http://localhost:9411
-    sender:
-      type: http
+    #sender:
+    #  type: http
   kafka:
     producer:
       bootstrap-servers: ${KAFKA_SERVER:localhost:9092}
@@ -62,11 +62,11 @@ management:
       exposure:
         include: "*"
         
-opentracing:
-  jaeger:
-    log-spans: true
-    udp-sender:
-      host: localhost
-      port: 6831
+#opentracing:
+#  jaeger:
+#    log-spans: true
+#    udp-sender:
+#      host: localhost
+#      port: 6831
 
 
