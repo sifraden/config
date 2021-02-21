@@ -12,8 +12,6 @@ spring:
     sampler:
       percentage: 1.0
       probability: 1.0
-    opentracing:
-        enabled: true
     mongodb:
       enabled: true
   zipkin:
