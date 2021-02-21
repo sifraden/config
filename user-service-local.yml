@@ -12,6 +12,8 @@ spring:
   sleuth:
     reactor:
       instrumentation-type: manual
+    redis:
+      enabled: true
     sampler:
       percentage: 1.0
       probability: 1.0
