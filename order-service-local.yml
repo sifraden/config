@@ -14,6 +14,8 @@ spring:
       local-datacenter: datacenter1
       schema-action: create_if_not_exists
   sleuth:
+    reactor:
+      instrumentation-type: manual
     sampler:
       percentage: 1.0
       probability: 1.0
