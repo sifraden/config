@@ -7,7 +7,7 @@ spring:
       #host: ${MONGO_SERVER:localhost}
       #port: ${MONGO_PORT:27018}
       #database: products
-      uri: mongodb://localhost:27018/products
+      uri: mongodb://localhost:27017/products
   sleuth:
     sampler:
       percentage: 1.0
