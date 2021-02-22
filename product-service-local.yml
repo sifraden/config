@@ -45,6 +45,9 @@ kafka:
 security:
   active: true
   
+test:
+  toto: TOTO
+  
 fallback:
   products:
     men:
