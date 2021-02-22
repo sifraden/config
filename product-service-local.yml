@@ -9,6 +9,8 @@ spring:
       #database: products
       uri: mongodb://localhost:27017/products
   sleuth:
+    reactor:
+      instrumentation-type: manual
     sampler:
       percentage: 1.0
       probability: 1.0
