@@ -8,8 +8,8 @@ management:
         include: "*"
 spring:
   sleuth:
-    #reactor:
-    #  instrumentation-type: manual
+    reactor:
+      instrumentation-type: manual
     sampler:
       percentage: 1.0
       probability: 1.0
