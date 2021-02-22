@@ -1,14 +1,5 @@
 server:
-  port: 0
-
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 30
-    metadata-map:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id}}
-  client:
-    service-url:
-      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+  port: 8080
 
 management:
   endpoints:
@@ -17,11 +8,13 @@ management:
         include: "*"
 spring:
   sleuth:
+    #reactor:
+    #  instrumentation-type: manual
     sampler:
-      percentage: 1
+      percentage: 1.0
+      probability: 1.0
   zipkin:
-    sender:
-      type: web
+    baseUrl: http://localhost:9411
 
 
 kafka:
