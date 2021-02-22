@@ -7,7 +7,7 @@ management:
       exposure:
         include: "*"
 spring:
-   sleuth:
+  sleuth:
     #reactor:
     #  instrumentation-type: manual
     sampler:
