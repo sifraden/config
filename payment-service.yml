@@ -1,14 +1,17 @@
-server:
-  port: 0
+Skip to content
+Search or jump to…
 
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 30
-    metadata-map:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id}}
-  client:
-    service-url:
-      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@sifraden 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+server:
+  port: 8080
 
 management:
   endpoints:
@@ -16,21 +19,9 @@ management:
       exposure:
         include: "*"
 spring:
-  rabbitmq:
-    host: ${RABBITMQ_SERVER:localhost}
-    port: 5672
-    username: guest
-    password: '{cipher}AQAZms+f2Lq4wLcMnZMStTcVqBUCFyDU1GaLdFrOnxx7IkDkxxrxVB5loD6akcAQIy3dbzX0tEUf5kO/mWO66xjH9pWxRtGQdnSfeVVBVaYe5n8r7v6T6Vf5DD2RCtdnY5ROMLenTiwry6t/zylKsYWZs4xADj2yd5RCEpGdVIdS4p070UAuDY8H4om1bH94afsek6TE5e074Ns4mjBxubRSJbRANIbV1APpYOjmMQGylDbZaKm7CHCb3qBuO9JLX7ITht7x+ouIq92nKYsfMHjBH1trgT3k4JtUcxQnmiWvzC+lb89DH3k1mn45Eg11tqx0tWdJMo6pV8JTzF8tRokgdjzfXI0RmEzLDbGoYcC7JtuDUHEDnnwBHwVWFmG2cRE='
-  sleuth:
-    sampler:
-      percentage: 1.0
-      probability: 1.0
-  zipkin:
-    sender:
-      type: web
   kafka:
     producer:
-      bootstrap-servers: kafka:9092
+      bootstrap-servers: localhost:9092
       client-id: orders
       acks: all
       retries: 3
@@ -41,28 +32,32 @@ spring:
         transaction-timeout-ms: 1000
         request-timeout-ms: 1000
         retry-backoff-ms: 1000
-        
-hystrix:
-  shareSecurityContext: true
-
-feign:
-  hystrix:
-    enabled: true
-
+  sleuth:
+    reactor:
+      instrumentation-type: manual
+    sampler:
+      percentage: 1.0
+      probability: 1.0
+  zipkin:
+    baseUrl: http://localhost:9411
+  
 kafka:
-  bootstrapAddress: kafka:9092
+  bootstrapAddress: localhost:9092
   consumer:
+    nack:
+      topic: nackOrders
+      groupId: nackOrders
     topic: orders
     groupId: paymentGroup
   producer:
+    nack:
+      topic: nackOrders
     topic: catchup-orders
 
-consumer:
-  feign:
-    username: '{cipher}AQBqBkU/bkSKunCuRI/wAAPm2UPC45z3hI9raXYNjEvzEKySbEgcJKv115B3Db55atAmOZHCkA2Wt3tB6Kp045WmJrTW0HoSt/GMJBvV1sFt/mqXxDFqvARQ4qP6NwujBMfNfZA/oUGZsAULSucFmO79eyIpGx2B+CTbbt83fp+GFyJakRWSC7Zyd4f/23BJHyJ4cbUGT5s61sqVC5ExJ+TJesKJSvjSWgjoO+JSHG/o7P8LZl66cu0gqZBcRnzshKUHiffnOEZ/OFMEkTlP368gbCkvKEuyNnmrfau8HCD90F/+BAUhSaYkKYEp5CUKkMVZQxxsH0CMpxYP7gUzVlmUuHFCqXcRGQBhQ/ZyifEr2t+uFb6OvMnCwIk/lx7eZNk='
-    password: '{cipher}AQBb2I2xh46YwbaPZgCc31pUaaKoKpcqBCTsjugP2t08AOmx0LvANkxnHUznYNegWjUpe/C5MUXSwb68tz5XInaSPp4ToaKlIQZIesLCGzbf6YAivG5+Mm3IZ/EQYzdynAWH4N2CTfvLCVhTdG42g+OkPcRWSwClYPutkv3BW2e0aZBf69+VlH226E2MBsW3o3wo2Y+m5VVxZDcYhizLqiaJADSA7+JTZQ3nXl0HAeb1OnmUiQlww3RWdkxkfz5i72NcGQEA1/2IsahblyNxj4svPcSRzNAPUBiJMa4WIwFv6S16zn/d4RZ2Wiqxf+u7C/sD7vOfXBF3GE1XZdh0f6jCDHDG43BfmOb+3vQzBwj9MPuH387S6O9n+AxCcwgLqzM='
-    url: ${FEIGN_CONSUMER:http://localhost:9090/api/authentication/oauth/token}
-    clientId: '{cipher}AQBfHZMql9E6U3g8WrpnSdXD9QrsIVNNx73fqLLFpF+hOz1SwFoJPjDj4BzNR3cT1lt7U896WHU8B7+6YdImKn3hFQcIvlczg+ejpuLOdPwfdntdf3cVgm34C5hMerW+rMx0KdzEgXE+jWl4scMzVAjWsWGvWIZ2V7OwDkTdqPEAk6t0rQbxczXM8lAf81Mc2Nu/0ibRTPqoxecidfM2Hau1PpIQJA/gvEYh6k0ZyOTySuePK6WusccOHSopMmBjTCegpy6fJfhdgxh4Goybv+8o2a35QgEU6rDdOM/7iseAUYO0Wghwoxf226eLm0xeMsclV6BOxok6ka7VtD+iLF7WUZuIYyubeyibpyoda/llantOf4PUgapxJCCO5hPEaic='
-    secret: '{cipher}AQA5W3HLMHMEeKyDCzIoHkW5TWo7wm9d1kwDiMGv+NMOPmcPkFn8rE8/Sx1IUuaCchUK9cvtz+qro3p+a1cvA83/rkHab3ZazCsbssfDDtXUq1zz2xumbf4OC57+R9wOLLC7pqDkvY98ZuYNass2CNtvql2yL7e7nWu97ovD25Vu4SNgWBxikhHyLX4vAMqwOaz9Mq+5M+sDzXmEp6YwZPJ/IhxyzuGuxe0Qr7ZBawUGbt/NHYnx0JyHOmgGc37PsnX4xOpT4I8CIKo+jtv3DNDOn/00T0/1AnNRzwANttiuAseE+RNWDmtTURnVEK52AGqr7EIgUE3Atry3vuVdO0li0GsneIOmp3Tkawf3Pgr/FkxfCBl7lx36lePKRVZIFug='
-    grant: '{cipher}AQBwk+LZKk0JwGZxQ5KNQWf+Cb8jrxHcTOA3iBWiuWB1oXHqKYbo5sU9gErVTAul73K/zBvQT1lLV/a2DLKortGAPKjutMJqGJ7MZhm+YUhmqeemNgQKR/RW4LHq4J7yXNFH68RFO3PtgFfpMPVrDlccnp++k+vAWciWZv/69Cz6oJslX9bHq456KRFmxlH1Yps489BhCXHXshOwDceVoaRm+rEZVJ2QeiTfRmO5yS6X66QuW+BuhDz2OITIJ0J1T/+43jzV2htGI5H9zwbmUagg4Ju4EByMiQOATeUQmhMM7nYYGty/FRcpFPWCKiY3tJDOYQuUr3KZdVB/NR8HZ+lmONVRkDEHoAtHDsbDq2yqC1I1KLrKXKaPSQ9OQtBNlZY='
-    scope: '{cipher}AQAYuvjl24ttncuzu9KoUFpDWhoE76Lxfu9pIYlr+Iw7z1mkmf2Tungpb+qafGPTkO5Gc+uYoh+KedWPdhQq/2LOf4+waU20+BCsUEYq0znA0rQODmBDiKKcnkp7lBzPDfCYI0p7vlIR2z2qyMcByQxxpw2wT4tSKsO82Ulv5ANBDqUzuRhu98TE+Yg8dkSfAEU6hOGiFdx6TuS+DUqEwyF1DM1YMSHqEGQEQ3yh/IETqk606zmCSCNFZK9zrfFe/6InIw4rPck/1hfvPErzfEyTQqaAbyRGgACNemqGG1NFtPLj1WyFjuTIK5+7JBte3ny8fzrDIhGdXXR8mGSYj1iwPcfjm1n+TF5g8V1I9aYxfXVUymqAl3IHqSLADEQDXMQ='
+stripe:
+ url: https://api.stripe.com
+ public-key: sk_test_51HYJubArLuFLaKsZh7FrusGK6heQuk5nXZMBUQTjKvOX1X2eQWmBa2r3b2Y1DoW1gZ1gySQqmhulgEPKL8iS4b0900FjjO3TLL
+
+order:
+ url: http://localhost:8086
+ redirect: http://localhost:3000/processing
