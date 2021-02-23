@@ -27,5 +27,9 @@ sendGrid:
 
 kafka:
   bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
-  groupId: ordersGroup
-  topic: orders
+  order:
+    groupId: ordersGroup
+    topic: orders
+  user:
+    groupId: usersGroup
+    topic: users
