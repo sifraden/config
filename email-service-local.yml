@@ -12,6 +12,14 @@ spring:
   jackson:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
+  sleuth:
+    reactor:
+      instrumentation-type: manual
+    sampler:
+      percentage: 1.0
+      probability: 1.0
+  zipkin:
+    baseUrl: http://localhost:9411
 
 sendGrid:
   mail:
