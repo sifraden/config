@@ -9,7 +9,7 @@ management:
 spring:
   sleuth:
     reactor:
-      instrumentation-type: DECORATE_ON_LAST
+      instrumentation-type: manual
     sampler:
       percentage: 1.0
       probability: 1.0
