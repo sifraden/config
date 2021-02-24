@@ -31,6 +31,9 @@ sendGrid:
     templateSubscriptionId: d-45d928c780ac40bc9c534497e1f63f21
     templateShippedId: d-92d0d73f744c4f07ab47c003ea4a1704
     templateUpdatesId: d-c8ca22c00e9f41d8b91f90facf770744
+    templateForgotPasswordId: d-261b6127184343a98ddd2be872815886
+    templateWelcomeUserId: d-b685c1e7e29b43609c05d1d1c09f3eeb
+
 
 
 kafka:
