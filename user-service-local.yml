@@ -26,10 +26,12 @@ kafka:
   bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
   producer:
     topic: users
- 
       
 management:
   endpoint:
+    web:
+      exposure:
+        include: "*"   
     health:
       show-details: always
   health:
