@@ -30,6 +30,9 @@ kafka:
       
 management:
   endpoint:
+    web:
+      exposure:
+        include: "*"   
     health:
       show-details: always
   health:
