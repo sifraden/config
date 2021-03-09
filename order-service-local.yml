@@ -10,8 +10,6 @@ logging:
       springframework:
         data:
           mongodb: DEBUG
-            core:
-              MongoTemplate: DEBUG
              
 
 spring:
