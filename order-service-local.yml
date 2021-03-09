@@ -4,6 +4,16 @@ server:
 #logging:
 #  config: classpath:logback-spring.xml
 
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb: DEBUG
+            core:
+              MongoTemplate: DEBUG
+             
+
 spring:
   data:
     mongodb:
