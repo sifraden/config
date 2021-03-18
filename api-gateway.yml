@@ -16,6 +16,12 @@ spring:
               - OPTIONS
             allowedHeaders: "*"
       routes:
+        - id: auth
+          uri: http://auth-service:8080
+          predicates:
+            - Path= /auth/**
+          filters:
+            - RewritePath= /auth(?<segment>/?.*), $\{segment}
         - id: product-service
           uri: http://product-service:8080
           predicates:
@@ -59,54 +65,35 @@ spring:
             - Path= /payment/**
           filters:
             - RewritePath= /payment(?<segment>/?.*), $\{segment}
-        - id: authentication-service
-          uri: http://authentication-service:8080
-          predicates:
-            - Path= /authentication/**
-          filters:
-            - RewritePath= /authentication(?<segment>/?.*), $\{segment}
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-
   security:
     oauth2:
-#      client:
-#        registration:
-#          api-gateway:
-#            provider: keycloak
-#            client-id: api-gateway-client
-#            client-secret: 05807f3c-7d3d-4c4a-ade4-2db7f70abc51
-#            authorization-grant-type: authorization_code
-#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-#            #redirect-uri: "http://localhost:9191/authorize/oauth2/code/{registrationId}"
-#            scope: openid
-#        provider:
-#          keycloak:
-#            issuer-uri: http://localhost:8080/auth/realms/api-gateway
-            #http://localhost:8080/auth/realms/api-gateway
-            #authorization-uri: http://localhost:8282/oauth/token
-            #authorization-uri: http://localhost:8080/auth/realms/api-gateway/protocol/openid-connect/auth
-            #token-uri: http://localhost:8282/oauth/token
-            #token-uri: http://localhost:8080/auth/realms/api-gateway/protocol/openid-connect/token
-            #user-info-uri: http://localhost:8282/resources/userinfo
-            #user-info-uri: http://localhost:8080/auth/realms/api-gateway/protocol/openid-connect/userinfo
-            #jwk-set-uri: http://localhost:8080/auth/realms/api-gateway/protocol/openid-connect/certs
-            #user-name-attribute: preferred_username
-#
       resourceserver:
         jwt:
-          issuer-uri: ${ISSUER_URI:http://192.168.64.4:30080/auth/realms/api-gateway}
-          jwk-set-uri: ${JWK_SET_URI:http://192.168.64.4:30080/auth/realms/api-gateway/protocol/openid-connect/certs}
-      
+          issuer-uri: ${ISSUER_URI:https://auth.naybxrz.com/auth/realms/api-gateway}
+          jwk-set-uri: ${JWK_SET_URI:https://auth.naybxrz.com/auth/realms/api-gateway/protocol/openid-connect/certs}
+  sleuth:
+    reactor:
+      instrumentation-type: DECORATE_ON_LAST
+    sampler:
+      percentage: 1.0
+      probability: 1.0
+      opentracing:
+        enabled: true     
+  zipkin:
+    baseUrl: http://jaeger:9411
+
+
 logging:
-  config: classpath:logback-spring.xml
   level:
     root: INFO
     org.springframework.web: INFO
     org.springframework.security: INFO
     org.springframework.security.oauth2: INFO
     org.springframework.cloud.gateway: INFO
+  config: classpath:logback-spring.xml
