@@ -4,7 +4,6 @@ server:
 logging:
   config: classpath:logback-spring.xml
              
-
 spring:
   data:
     mongodb:
