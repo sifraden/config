@@ -89,14 +89,16 @@ spring:
     baseUrl: http://jaeger:9411
 
 management:
-  endpoints:
+  endpoint:
     health:
       show-details: always
       probes:
         enabled: true
-    web:
-      exposure:
-        include: "*"
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
         
 logging:
   config: classpath:logback-spring.xml
