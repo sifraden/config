@@ -1,17 +1,21 @@
 server:
-  port: 8089
+  port: 8080
 
 management:
   endpoints:
+    health:
+      show-details: always
+      probes:
+        enabled: true
     web:
       exposure:
         include: "*"
         
 kafka:
-  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
+  bootstrapAddress: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
   groupId: indexedOrders
   topic: orders
 
 elasticsearch:
   index: store_orders
-  server: ${ELASTICSEARCH_SERVER:localhost:9200}
+  server: ${ELASTICSEARCH_SERVER:elasticsearch:9200}
