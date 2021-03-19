@@ -20,6 +20,8 @@ management:
       enabled: true
     readinessstate:
       enabled: true
+    elasticsearch:
+      enabled: true
         
 kafka:
   bootstrapAddress: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
