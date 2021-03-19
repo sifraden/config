@@ -1,16 +1,20 @@
 server:
   port: 8080
 
-
 management:
-  endpoints:
+  endpoint:
+    web:
+      exposure:
+        include: "*"
     health:
       show-details: always
       probes:
         enabled: true
-    web:
-      exposure:
-        include: "*"
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
 spring:
   kafka:
     producer:
