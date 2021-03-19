@@ -12,6 +12,14 @@ spring:
   jackson:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
+  sleuth:
+    reactor:
+      instrumentation-type: manual
+    sampler:
+      percentage: 1.0
+      probability: 1.0
+  zipkin:
+    baseUrl: http://jaeger:9411
 
 sendGrid:
   mail:
@@ -23,12 +31,16 @@ sendGrid:
     templateSubscriptionId: d-45d928c780ac40bc9c534497e1f63f21
     templateShippedId: d-92d0d73f744c4f07ab47c003ea4a1704
     templateUpdatesId: d-c8ca22c00e9f41d8b91f90facf770744
+    templateForgotPasswordId: d-261b6127184343a98ddd2be872815886
+    templateWelcomeUserId: d-b685c1e7e29b43609c05d1d1c09f3eeb
+
+
 
 kafka:
-  bootstrapAddress: ${KAFKA_SERVER:my-cluster-kafka-0.my-cluster-kafka-brokers.kafka:9092}
-  groupId: ordersGroup
-  topic: orders
-
-users:
-  subscriptions:
-    url: http://localhost:8083
+  bootstrapAddress: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
+  order:
+    groupId: ordersGroup
+    topic: orders
+  user:
+    groupId: usersGroup
+    topic: users
