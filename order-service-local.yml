@@ -72,14 +72,19 @@ consumer:
   payment-service: http://localhost:8087
   
 management:
-  endpoints:
+  endpoint:
+    web:
+      exposure:
+        include: "*"
     health:
       show-details: always
       probes:
         enabled: true
-    web:
-      exposure:
-        include: "*"
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
         
 #opentracing:
 #  jaeger:
