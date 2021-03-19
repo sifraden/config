@@ -1,34 +1,36 @@
 server:
   port: 8080
 
-#logging:
-#  config: classpath:logback-spring.xml
+logging:
+  config: classpath:logback-spring.xml
+             
 
 spring:
   data:
-    cassandra:
-      cluster-name: CassandraCluster
-      contact-points: ${CASSANDRA_SERVER:cassandra.cassandra}
-      port: 9042
-      keyspace-name: orderkeyspace
-      local-datacenter: datacenter1
-      schema-action: create_if_not_exists
+    mongodb:
+      host: ${MONGO_SERVER:mongodb-svc.production.svc.cluster.local}
+      port: ${MONGO_PORT:27017}
+      database: orders
+      username: orders-user
+      password: 0RDERPa55W0rd!!
   sleuth:
+    reactor:
+      instrumentation-type: manual
     sampler:
       percentage: 1.0
       probability: 1.0
+    opentracing:
+        enabled: true
   zipkin:
-    sender:
-      type: web
+    baseUrl: http://jaeger:9411
   kafka:
     producer:
-      bootstrap-servers: ${KAFKA_SERVER:my-cluster-kafka-0.my-cluster-kafka-brokers.kafka:9092}
+      bootstrap-servers: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
       client-id: orders
       acks: all
       retries: 3
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      #transaction-id-prefix: tx.
       properties:
         max-in-flight-requests-per-connection: 1
         transaction-timeout-ms: 1000
@@ -39,20 +41,27 @@ spring:
       WRITE_DATE_KEYS_AS_TIMESTAMPS: false
 
 kafka:
-  bootstrapAddress: ${KAFKA_SERVER:my-cluster-kafka-0.my-cluster-kafka-brokers.kafka:9092}
+  bootstrapAddress: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
   consumer:
     topic: catchup-orders
     groupId: catchupOrdersGroup
   producer:
     topic: orders
+
+# report spans using kafka
+#bootstrap:
+#  servers: ${KAFKA_SERVER:localhost:9092}
     
 consumer:
   payment-service: http://payment-service:8080
   
 management:
   endpoints:
+    health:
+      show-details: always
+      probes:
+        enabled: true
     web:
       exposure:
         include: "*"
         
-
