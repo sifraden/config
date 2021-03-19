@@ -1,6 +1,11 @@
 server:
   port: 8080
-
+  
+spring:
+  sleuth:
+    reactor:
+      instrumentation-type: DECORATE_ON_LAST
+      
 management:
   endpoints:
     health:
