@@ -4,13 +4,17 @@ server:
 
 management:
   endpoints:
+    health:
+      show-details: always
+      probes:
+        enabled: true
     web:
       exposure:
         include: "*"
 spring:
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: kafka-cluster-kafka-bootstrap.production.svc:9092
       client-id: orders
       acks: all
       retries: 3
@@ -28,20 +32,15 @@ spring:
       percentage: 1.0
       probability: 1.0
   zipkin:
-    baseUrl: http://localhost:9411
+    baseUrl: http://jaeger:9411
   
   
 kafka:
-  bootstrapAddress: localhost:9092
+  bootstrapAddress: kafka-cluster-kafka-bootstrap.production.svc:9092
   consumer:
-    nack:
-      topic: nackOrders
-      groupId: nackOrders
     topic: orders
     groupId: paymentGroup
   producer:
-    nack:
-      topic: nackOrders
     topic: catchup-orders
 
 stripe:
@@ -49,5 +48,5 @@ stripe:
  public-key: sk_test_51HYJubArLuFLaKsZh7FrusGK6heQuk5nXZMBUQTjKvOX1X2eQWmBa2r3b2Y1DoW1gZ1gySQqmhulgEPKL8iS4b0900FjjO3TLL
 
 order:
- url: http://localhost:8086
- redirect: http://localhost:3000/processing
+ url: http://order-service:8080
+ redirect: https://naybxrz.com/processing
