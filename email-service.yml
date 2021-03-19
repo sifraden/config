@@ -3,6 +3,10 @@ server:
 
 management:
   endpoints:
+    health:
+      show-details: always
+      probes:
+        enabled: true
     web:
       exposure:
         include: "*"
