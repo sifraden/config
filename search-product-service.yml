@@ -3,6 +3,10 @@ server:
 
 management:
   endpoints:
+    health:
+      show-details: always
+      probes:
+        enabled: true
     web:
       exposure:
         include: "*"
@@ -14,14 +18,14 @@ spring:
       percentage: 1.0
       probability: 1.0
   zipkin:
-    baseUrl: http://localhost:9411
+    baseUrl: http://jaeger:9411
 
 
 kafka:
-  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
+  bootstrapAddress: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
   groupId: products
   topic: products
 
 elasticsearch:
   index: store_products
-  server: ${ELASTICSEARCH_SERVER:localhost:9200}
+  server: ${ELASTICSEARCH_SERVER:elasticsearch:9200}
