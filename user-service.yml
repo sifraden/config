@@ -2,10 +2,8 @@ server:
   port: 8080
 spring:
   redis:
-    host: localhost
+    host: redis-master.production.svc.cluster.local
     port: 6379
-    #cluster:
-    # nodes: localhost:6379
   session:
     redis:
       flush-mode: IMMEDIATE
@@ -20,13 +18,12 @@ spring:
     opentracing:
         enabled: true
   zipkin:
-    baseUrl: http://localhost:9411
+    baseUrl: http://jaeger:9411
     
 kafka:
-  bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
+  bootstrapAddress: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
   producer:
     topic: users
- 
       
 management:
   endpoint:
@@ -35,6 +32,8 @@ management:
         include: "*"   
     health:
       show-details: always
+      probes:
+        enabled: true
   health:
     redis:
       enabled: true
