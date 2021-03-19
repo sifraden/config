@@ -88,6 +88,15 @@ spring:
   zipkin:
     baseUrl: http://jaeger:9411
 
-
+management:
+  endpoints:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+    web:
+      exposure:
+        include: "*"
+        
 logging:
   config: classpath:logback-spring.xml
