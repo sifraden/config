@@ -31,6 +31,9 @@ kafka:
   consumer:
     topic: catchup-orders
     groupId: catchupOrdersGroup
+    dlt:
+      topic: catchup-orders.DLT
+      groupId: catchupOrdersGroupDLT
   producer:
     topic: orders
 
