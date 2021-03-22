@@ -5,6 +5,8 @@ spring:
   sleuth:
     reactor:
       instrumentation-type: DECORATE_ON_LAST
+  zipkin:
+    baseUrl: http://jaeger-collector:9411
       
 management:
   endpoint:
@@ -30,4 +32,4 @@ kafka:
 
 elasticsearch:
   index: store_orders
-  server: ${ELASTICSEARCH_SERVER:elasticsearch:9200}
+  server: ${ELASTICSEARCH_SERVER:elasticsearch-master.production.svc:9200}
