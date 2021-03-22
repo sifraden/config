@@ -18,6 +18,8 @@ spring:
       host: ${MONGO_SERVER:localhost}
       port: ${MONGO_PORT:27017}
       database: orders
+      username: ""
+      password: ""
       #uri: mongodb://localhost:27017/products
     #cassandra:
     #  cluster-name: CassandraCluster
