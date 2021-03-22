@@ -22,19 +22,6 @@ spring:
         enabled: true
   zipkin:
     baseUrl: http://jaeger-collector:9411
-  kafka:
-    producer:
-      bootstrap-servers: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
-      client-id: orders
-      acks: all
-      retries: 3
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      properties:
-        max-in-flight-requests-per-connection: 1
-        transaction-timeout-ms: 1000
-        request-timeout-ms: 1000
-        retry-backoff-ms: 1000
   jackson:
     serialization:
       WRITE_DATE_KEYS_AS_TIMESTAMPS: false
