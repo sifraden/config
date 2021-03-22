@@ -25,7 +25,7 @@ spring:
       percentage: 1.0
       probability: 1.0
   zipkin:
-    baseUrl: http://jaeger:9411
+    baseUrl: http://jaeger-collector:9411
 
 
 kafka:
@@ -35,4 +35,4 @@ kafka:
 
 elasticsearch:
   index: store_products
-  server: ${ELASTICSEARCH_SERVER:elasticsearch:9200}
+  server: ${ELASTICSEARCH_SERVER:elasticsearch-master.production.svc:9200}
