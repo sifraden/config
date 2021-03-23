@@ -16,19 +16,6 @@ management:
     readinessstate:
       enabled: true
 spring:
-  kafka:
-    producer:
-      bootstrap-servers: kafka-cluster-kafka-bootstrap.production.svc:9092
-      client-id: orders
-      acks: all
-      retries: 3
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      properties:
-        max-in-flight-requests-per-connection: 1
-        transaction-timeout-ms: 1000
-        request-timeout-ms: 1000
-        retry-backoff-ms: 1000
   sleuth:
     reactor:
       instrumentation-type: manual
@@ -37,7 +24,6 @@ spring:
       probability: 1.0
   zipkin:
     baseUrl: http://jaeger-collector:9411
-  
   
 kafka:
   bootstrapAddress: kafka-cluster-kafka-bootstrap.production.svc:9092
