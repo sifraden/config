@@ -30,6 +30,9 @@ kafka:
   consumer:
     topic: orders
     groupId: paymentGroup
+    dlt:
+      topic: orders-dlt
+      groupId: paymentGroup-dlt
   producer:
     topic: catchup-orders
 
