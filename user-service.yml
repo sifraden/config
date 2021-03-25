@@ -4,6 +4,7 @@ spring:
   redis:
     host: redis-master.production.svc.cluster.local
     port: 6379
+    password: P455w0rd!!
   session:
     redis:
       flush-mode: IMMEDIATE
