@@ -9,6 +9,7 @@ spring:
     mongodb:
       uri: mongodb://orders-user:0RDERPa55W0rd!!@mongodb-svc.production.svc:27017/orders
       database: orders
+      authentication-database: admin
   sleuth:
     reactor:
       instrumentation-type: manual
