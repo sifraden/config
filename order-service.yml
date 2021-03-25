@@ -7,11 +7,12 @@ logging:
 spring:
   data:
     mongodb:
-      host: mongodb-svc.production.svc
-      port: 27017
+      uri: mongodb://orders-user:0RDERPa55W0rd!!@mongodb-svc.production.svc:27017/orders?compressors=zlib
+      #host: mongodb-svc.production.svc
+      #port: 27017
       database: orders
-      username: orders-user
-      password: 0RDERPa55W0rd!!
+      #username: orders-user
+      #password: 0RDERPa55W0rd!!
   sleuth:
     reactor:
       instrumentation-type: manual
