@@ -7,7 +7,7 @@ logging:
 spring:
   data:
     mongodb:
-      host: mongodb-svc.production.svc.cluster.local
+      host: mongodb-svc.production.svc
       port: 27017
       database: orders
       username: orders-user
