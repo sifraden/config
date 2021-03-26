@@ -4,11 +4,8 @@ server:
 spring:
   data:
     mongodb:
-      host: ${MONGO_SERVER:mongodb-svc.production.svc.cluster.local}
-      port: ${MONGO_PORT:27017}
+      uri: mongodb://products-user:PR0DUCTPa55W0rd!!@mongodb-svc.production.svc:27017/products
       database: products
-      username: products-user
-      password: PR0DUCTPa55W0rd!!
   sleuth:
     reactor:
       instrumentation-type: manual
