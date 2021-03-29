@@ -54,3 +54,6 @@ kafka:
   user:
     groupId: usersGroup
     topic: users
+  subscriber:
+    groupId: subscribersGroup
+    topic: subscribers
