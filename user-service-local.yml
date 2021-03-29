@@ -4,8 +4,6 @@ spring:
   redis:
     host: localhost
     port: 6379
-    #cluster:
-    # nodes: localhost:6379
   session:
     redis:
       flush-mode: IMMEDIATE
@@ -25,7 +23,10 @@ spring:
 kafka:
   bootstrapAddress: ${KAFKA_SERVER:localhost:9092}
   producer:
-    topic: users
+    user:
+      topic: users
+    subscriber:
+      topic: subscribers
       
 management:
   endpoint:
