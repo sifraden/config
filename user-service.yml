@@ -24,7 +24,10 @@ spring:
 kafka:
   bootstrapAddress: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
   producer:
-    topic: users
+    user:
+      topic: users
+    subscriber:
+      topic: subscribers
       
 management:
   endpoint:
