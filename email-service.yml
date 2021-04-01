@@ -34,6 +34,7 @@ spring:
 sendGrid:
   mail:
     from: contact@naybxrz.com
+    name: Naybxrz
     templateConfirmationId: d-16c5a50505b845ceba96425e30fbc196
     templatePendingId: d-842d74a4b0d14881b640f5bac1899e2b
     templateRefusedId: d-c2136dc4841949c9b0aa69b871fed307
