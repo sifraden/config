@@ -7,7 +7,7 @@ logging:
 spring:
   data:
     mongodb:
-      uri: mongodb://orders-user:0RDERPa55W0rd!!@mongodb-svc.production.svc:27017/orders
+      uri: mongodb://orders-user:0RDERPa55W0rd!!@mongodb-svc.production.svc:27017/orders?replicaSet=mongodb
       database: orders
       authentication-database: admin
   sleuth:
