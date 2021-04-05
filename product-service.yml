@@ -4,7 +4,7 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://products-user:PR0DUCTPa55W0rd!!@mongodb-svc.production.svc:27017/products
+      uri: mongodb://products-user:PR0DUCTPa55W0rd!!@mongodb-svc.production.svc:27017/products?replicaSet=mongodb
       database: products
   sleuth:
     reactor:
