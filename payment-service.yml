@@ -38,7 +38,7 @@ kafka:
 
 stripe:
  url: https://api.stripe.com
- public-key: pk_live_51HYJubArLuFLaKsZkd5OIrXuIWVbtjzMxqGlgCDCvWfcrt3yyhxHGQJratyUqyVBad4ySc80Fkm2uNiX8djLurqe00VTuFsOUQ
+ public-key: '{cipher}AQAtlmeyQ/MBAec6mLWs5mv/Ay3GFur6l/vBl848g63Dc9XOMVxwuRb3v/UuGTHzJccbq3lZc10qrWfuuHHRvwxPYPusyokCleRrxZOy1/47DZ70ovCJOI7gpXq/3mqHr9QfYTOv3c/XZsoJ34MkumPoDvAkB+hmPjvZCyg8YW+hPiCFSWgnjs2Lr2ixfyAopt+f/elhAhebi/l4wTXLHUGjRAEPzw615+4ziKdBLomXRb6TnhxOZ5gr5Luf+8q5/DFADIYKjyE1K4FM+x1bt0MieGgSmp4kl5FEy5aNGlQ4Dm+eps2bh2O9SDkc7CkHuUEQ8lmEqGbT1JLQVzkoN0yiyhE6kX/HPhOGPRvt+J8Jx0qTVm5apvTNEp1M5Bw/3v093GDTXNpSrg7DBJfY6yKKCKhHrSQFzrwJW5fFTog43BINBxtX19hwEI9VsXbAd7qdkpDDzNQ+c9+ZAdZoUzpY1IXVTjQfumLnEVcl+6iylTbU1+JsWoYitGoHzOpQif8='
 
 order:
  url: http://order-service:8080
