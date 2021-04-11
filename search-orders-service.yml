@@ -6,7 +6,7 @@ spring:
     reactor:
       instrumentation-type: DECORATE_ON_LAST
   zipkin:
-    baseUrl: http://jaeger-collector:9411
+    baseUrl: http://jaeger-collector.default.svc:9411
       
 management:
   endpoint:
