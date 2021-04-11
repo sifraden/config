@@ -19,7 +19,7 @@ spring:
     opentracing:
         enabled: true
   zipkin:
-    baseUrl: http://jaeger-collector.default.svc:9411
+    baseUrl: http://jaeger-collector:9411
   jackson:
     serialization:
       WRITE_DATE_KEYS_AS_TIMESTAMPS: false
