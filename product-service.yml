@@ -15,7 +15,7 @@ spring:
     mongodb:
       enabled: true
   zipkin:
-    baseUrl: http://jaeger-collector:9411
+    baseUrl: http://jaeger-collector.default.svc:9411
   kafka:
     producer:
       bootstrap-servers: ${KAFKA_SERVER:kafka-cluster-kafka-bootstrap.production.svc:9092}
