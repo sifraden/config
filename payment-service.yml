@@ -23,7 +23,7 @@ spring:
       percentage: 1.0
       probability: 1.0
   zipkin:
-    baseUrl: http://jaeger-collector.default.svc:9411
+    baseUrl: http://jaeger-collector:9411
   
 kafka:
   bootstrapAddress: kafka-cluster-kafka-bootstrap.production.svc:9092
