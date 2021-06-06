@@ -15,11 +15,9 @@ logging:
 spring:
   data:
     mongodb:
-      host: ${MONGO_SERVER:localhost}
-      port: ${MONGO_PORT:27017}
+      uri: mongodb://localhost:27017/orders
       database: orders
-      username: ""
-      password: ""
+      authentication-database: admin
       #uri: mongodb://localhost:27017/products
     #cassandra:
     #  cluster-name: CassandraCluster
